@@ -6,11 +6,15 @@ const navigation = [
   { name: "Home", href: "/" },
   { name: "Packages", href: "/packages" },
   { name: "Fireworks", href: "/fireworks" },
-  { name: "About", href: "#" },
+  { name: "About", href: "/about" },
 ];
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  function handleButtonClick() {
+    window.open("/packages", "_self");
+  }
 
   return (
     <header className="bg-white">
@@ -19,7 +23,7 @@ export default function Header() {
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
+          <a href="/" className="-m-1.5 p-1.5">
             <h1 className="font-bold italic">Gainesville Fireworks</h1>
           </a>
         </div>
@@ -47,6 +51,7 @@ export default function Header() {
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <button
             type="button"
+            onClick={handleButtonClick}
             className="rounded-md bg-red-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
           >
             Buy Now
@@ -62,7 +67,7 @@ export default function Header() {
         <div className="fixed inset-0 z-10" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
+            <a href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Gainesville Fireworks</span>
               <h1 className="font-bold italic">Gainesville Fireworks</h1>
             </a>
@@ -91,6 +96,7 @@ export default function Header() {
               <div className="py-6">
                 <button
                   type="button"
+                  onClick={handleButtonClick}
                   className="rounded-md bg-red-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
                 >
                   Buy Now

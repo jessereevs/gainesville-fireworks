@@ -6,7 +6,7 @@ export default function Packages() {
 	return(
 		<main>
 			<Header />
-			<h1>This is the Packages Page.</h1>
+			<h1>This is the packages page.</h1>
 		</main>
 	);
 }
