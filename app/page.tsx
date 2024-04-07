@@ -8,6 +8,7 @@ export default function Home() {
     <main>
       <Header />
       <PromoSection />
+      <div className='m-32'></div>
     </main>
   );
 }

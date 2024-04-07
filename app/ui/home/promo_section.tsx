@@ -1,3 +1,6 @@
+import Image from 'next/image';
+import HeroImage from '@/public/images/hero_images/fireworks_with_flag.jpg';
+
 const collections = [
 	{
 	  name: "Women's",
@@ -19,18 +22,19 @@ const collections = [
 	},
   ]
   
-  export default function Example() {
+  export default function PromoPage() {
 	return (
 	  <div className="relative bg-white">
 		{/* Background image and overlap */}
 		<div aria-hidden="true" className="absolute inset-0 hidden sm:flex sm:flex-col">
 		  <div className="relative w-full flex-1 bg-gray-800">
 			<div className="absolute inset-0 overflow-hidden">
-			  <img
-				src="https://tailwindui.com/img/ecommerce-images/home-page-04-hero-full-width.jpg"
-				alt=""
-				className="h-full w-full object-cover object-center"
-			  />
+				<Image 
+					src={HeroImage}
+					alt='Hero Image'
+					fill={true}
+					priority={true}
+				/>
 			</div>
 			<div className="absolute inset-0 bg-gray-900 opacity-50" />
 		  </div>
@@ -42,10 +46,11 @@ const collections = [
 		  <div aria-hidden="true" className="absolute inset-0 flex flex-col sm:hidden">
 			<div className="relative w-full flex-1 bg-gray-800">
 			  <div className="absolute inset-0 overflow-hidden">
-				<img
-				  src="https://tailwindui.com/img/ecommerce-images/home-page-04-hero-full-width.jpg"
-				  alt=""
-				  className="h-full w-full object-cover object-center"
+				<Image 
+					src={HeroImage}
+					alt='Hero Image'
+					fill={true}
+					priority={true}
 				/>
 			  </div>
 			  <div className="absolute inset-0 bg-gray-900 opacity-50" />
@@ -53,14 +58,13 @@ const collections = [
 			<div className="h-48 w-full bg-white" />
 		  </div>
 		  <div className="relative py-32">
-			<h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">Mid-Season Sale</h1>
+			<h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">Buy Your Fireworks Now!</h1>
 			<div className="mt-4 sm:mt-6">
-			  <a
-				href="#"
-				className="inline-block rounded-md border border-transparent bg-indigo-600 px-8 py-3 font-medium text-white hover:bg-indigo-700"
+			  <button
+				className="inline-block rounded-md border border-transparent bg-red-600 px-8 py-3 font-medium text-white hover:bg-red-700"
 			  >
 				Shop Collection
-			  </a>
+			  </button>
 			</div>
 		  </div>
 		</div>
