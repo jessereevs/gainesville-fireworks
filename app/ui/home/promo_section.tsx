@@ -1,24 +1,27 @@
 import Image from 'next/image';
 import HeroImage from '@/public/images/hero_images/fireworks_with_flag.jpg';
+import Generic_Fireworks_1 from '@/public/images/hero_images/generic_fireworks_1.jpg';
+import Generic_Fireworks_2 from '@/public/images/hero_images/generic_fireworks_2.jpg';
+import Fireworks_Packages from '@/public/images/hero_images/basic_packages.jpg';
 
 const collections = [
 	{
-	  name: "Women's",
-	  href: '#',
-	  imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-04-collection-01.jpg',
-	  imageAlt: 'Woman wearing an off-white cotton t-shirt.',
+	  name: "Individual Fireworks",
+	  href: '/fireworks',
+	  imageSrc: Generic_Fireworks_1,
+	  imageAlt: 'Individual Fireworks',
 	},
 	{
-	  name: "Men's",
-	  href: '#',
-	  imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-04-collection-02.jpg',
-	  imageAlt: 'Man wearing a charcoal gray cotton t-shirt.',
+	  name: "Firework Packages",
+	  href: '/packages',
+	  imageSrc: Fireworks_Packages, 
+	  imageAlt: 'Firework Packages',
 	},
 	{
-	  name: 'Desk Accessories',
-	  href: '#',
-	  imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-04-collection-03.jpg',
-	  imageAlt: 'Person sitting at a wooden desk with paper note organizer, pencil and tablet.',
+	  name: 'All Fireworks',
+	  href: '/fireworks',
+	  imageSrc: Generic_Fireworks_2,
+	  imageAlt: 'All Fireworks',
 	},
   ]
   
@@ -63,7 +66,7 @@ const collections = [
 			  <button
 				className="inline-block rounded-md border border-transparent bg-red-600 px-8 py-3 font-medium text-white hover:bg-red-700"
 			  >
-				Shop Collection
+				Shop Packages 
 			  </button>
 			</div>
 		  </div>
@@ -82,8 +85,8 @@ const collections = [
 				<div>
 				  <div aria-hidden="true" className="absolute inset-0 overflow-hidden rounded-lg">
 					<div className="absolute inset-0 overflow-hidden group-hover:opacity-75">
-					  <img
-						src={collection.imageSrc}
+					  <Image 
+					  	src={collection.imageSrc}
 						alt={collection.imageAlt}
 						className="h-full w-full object-cover object-center"
 					  />
@@ -92,9 +95,6 @@ const collections = [
 				  </div>
 				  <div className="absolute inset-0 flex items-end rounded-lg p-6">
 					<div>
-					  <p aria-hidden="true" className="text-sm text-white">
-						Shop the collection
-					  </p>
 					  <h3 className="mt-1 font-semibold text-white">
 						<a href={collection.href}>
 						  <span className="absolute inset-0" />
