@@ -1,12 +1,18 @@
 "use client";
 
 import Header from '@/app/ui/header';
+import Products from '@/app/ui/packages/product_listing';
+import Footer from '@/app/ui/footer';
 
 export default function Packages() {
 	return(
 		<main>
 			<Header />
-			<h1>This is the packages page.</h1>
+			<div className='mx-auto max-w-7xl px-4 pt-12 sm:px-6 lg:px-8'>
+				<h1 className='mx-auto max-w-3xl text-center font-bold text-3xl'>Packages</h1>
+			</div>
+			<Products />
+			<Footer />
 		</main>
 	);
 }
