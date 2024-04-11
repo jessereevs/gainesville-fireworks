@@ -61,7 +61,8 @@ const collections = [
 			<div className="h-48 w-full bg-white" />
 		  </div>
 		  <div className="relative py-32">
-			<h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">Buy Your Fireworks Now!</h1>
+			<h1 className="pb-4 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">Gainesville Fireworks</h1>
+			<h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">Buy Your Fireworks Now!</h2>
 			<div className="mt-4 sm:mt-6">
 			  <button
 				className="inline-block rounded-md border border-transparent bg-red-600 px-8 py-3 font-medium text-white hover:bg-red-700"
