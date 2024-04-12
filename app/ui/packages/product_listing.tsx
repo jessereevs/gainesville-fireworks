@@ -11,7 +11,7 @@ const products = [
 	{
 	  id: 1,
 	  name: 'Star Light',
-	  href: '#',
+	  href: '/packages/star-light',
 	  price: '$100',
 	  description: '1 Rocket, 1 Fountain, 1 Firecracker',
 	  imageSrc: Package1,
