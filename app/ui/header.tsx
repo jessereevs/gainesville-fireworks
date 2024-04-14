@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, XMarkIcon, ShoppingCartIcon } from "@heroicons/react/24/outline";
 import Link from 'next/link';
 
 const navigation = [
@@ -57,6 +57,12 @@ export default function Header() {
           >
             Buy Now
           </button>
+          <Link href="/cart" className="pl-6 pt-2">
+            <ShoppingCartIcon
+              className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
+              aria-hidden="true"
+            />
+          </Link>
         </div>
       </nav>
       <Dialog
@@ -94,7 +100,7 @@ export default function Header() {
                   </Link>
                 ))}
               </div>
-              <div className="py-6">
+              <div className="py-6 flex">
                 <button
                   type="button"
                   onClick={handleButtonClick}
@@ -102,6 +108,12 @@ export default function Header() {
                 >
                   Buy Now
                 </button>
+                <Link href="/cart" className="pl-6 pt-2">
+                  <ShoppingCartIcon
+                    className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
+                    aria-hidden="true"
+                  />
+                </Link>
               </div>
             </div>
           </div>
