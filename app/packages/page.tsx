@@ -1,7 +1,7 @@
 "use client";
 
 import Header from '@/app/ui/header';
-import Products from '@/app/ui/packages/product_listing';
+import Products from '@/app/ui/packages/product_listing_2';
 import Footer from '@/app/ui/footer';
 
 export default function Packages() {

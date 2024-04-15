@@ -1,0 +1,52 @@
+{
+	"packages": [
+		{
+			"id": "star-light",
+			"name": "Star Light",
+			"description": "1 Rocket, 1 Fountain, 1 Firecracker",
+			"price": 100,
+			"image": "/images/package_images/assortment_1.jpg",
+			"href": "/packages/star-light"
+		},
+		{
+			"id": "killer-value",
+			"name": "Killer Value",
+			"description": "2 Rockets, 2 Fountains, 2 Firecrackers",
+			"price": 200,
+			"image": "/images/package_images/assortment_2.jpg",
+			"href": "/"
+		},
+		{
+			"id": "two-for-the-show",
+			"name": "Two for the Show",
+			"description": "3 Rockets, 3 Fountains, 3 Firecrackers",
+			"price": 300,
+			"image": "/images/package_images/assortment_3.jpg",
+			"href": "/"
+		},
+		{
+			"id": "full-power",
+			"name": "Full Power",
+			"description": "4 Rockets, 4 Fountains, 4 Firecrackers",
+			"price": 400,
+			"image": "/images/package_images/assortment_4.jpg",
+			"href": "/"
+		},
+		{
+			"id": "stars-and-stripes",
+			"name": "Stars & Stripes",
+			"description": "5 Rockets, 5 Fountains, 5 Firecrackers",
+			"price": 500,
+			"image": "/images/package_images/assortment_5.jpg",
+			"href": "/"
+		},
+		{
+			"id": "war-games",
+			"name": "War Games",
+			"description": "6 Rockets, 6 Fountains, 6 Firecrackers",
+			"price": 600,
+			"image": "/images/package_images/assortment_6.jpg",
+			"href": "/"
+		}
+	]
+}
