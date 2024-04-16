@@ -4,6 +4,7 @@ import { FireworkPackage } from '@/types';
 
 import Header from '@/app/ui/header';
 import PackageDetail from '@/app/ui/packages/package_detail';
+import FeaturedProducts from '@/app/ui/home/featured-packages';
 import Footer from '@/app/ui/footer';
 
 import PackageImage from '@/public/images/package_images/assortment_1.jpg';
@@ -25,7 +26,7 @@ export default function StarLight() {
 			<PackageDetail
 				fireworkPackage = {fireworkPackage}
 			/>
-			<div className='m-8'></div>
+			<FeaturedProducts />
 			<Footer />
 		</>
 	);
