@@ -26,6 +26,11 @@ const collections = [
   ]
   
   export default function PromoPage() {
+
+	function handleButtonClick() {
+		window.open("/packages", "_self");
+	}
+
 	return (
 	  <div className="relative bg-white">
 		{/* Background image and overlap */}
@@ -65,6 +70,7 @@ const collections = [
 			<h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">Buy Your Fireworks Now!</h2>
 			<div className="mt-4 sm:mt-6">
 			  <button
+			  	onClick={handleButtonClick}
 				className="inline-block rounded-md border border-transparent bg-red-600 px-8 py-3 font-medium text-white hover:bg-red-700"
 			  >
 				Shop Packages 
