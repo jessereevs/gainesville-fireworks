@@ -1,12 +1,15 @@
 "use client";
 
 import Header from '@/app/ui/header';
+import AboutSection from '@/app/ui/about/main-about-page';
+import Footer from '@/app/ui/footer';
 
 export default function About() {
 	return(
 		<main>
 			<Header />
-			<h1>This is the about page.</h1>
+			<AboutSection />
+			<Footer />
 		</main>
 	);
 }
