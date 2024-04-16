@@ -7,33 +7,29 @@ import Package3Image from '@/public/images/package_images/assortment_3.jpg';
 const products = [
   {
     id: 1,
-    name: 'Basic Tee',
+    name: 'Star Light',
     href: '#',
-    price: '$32.00',
-    color: 'Sienna',
+    price: '$100.00',
+    color: 'Basic Fireworks Package',
     inStock: true,
-    size: 'Large',
     imageSrc: Package1Image,
     imageAlt: "Front of men's Basic Tee in sienna.",
   },
   {
     id: 2,
-    name: 'Basic Tee',
+    name: 'Killer Value',
     href: '#',
-    price: '$32.00',
-    color: 'Black',
-    inStock: false,
+    price: '$225.00',
     leadTime: '3-4 weeks',
-    size: 'Large',
+    inStock: false,
     imageSrc: Package2Image,
     imageAlt: "Front of men's Basic Tee in black.",
   },
   {
     id: 3,
-    name: 'Nomad Tumbler',
+    name: 'Two for the Show',
     href: '#',
-    price: '$35.00',
-    color: 'White',
+    price: '$300.00',
     inStock: true,
     imageSrc: Package3Image,
     imageAlt: 'Insulated bottle with white base and black snap lid.',
@@ -76,9 +72,6 @@ export default function ShoppingCart() {
                         </div>
                         <div className="mt-1 flex text-sm">
                           <p className="text-gray-500">{product.color}</p>
-                          {product.size ? (
-                            <p className="ml-4 border-l border-gray-200 pl-4 text-gray-500">{product.size}</p>
-                          ) : null}
                         </div>
                         <p className="mt-1 text-sm font-medium text-gray-900">{product.price}</p>
                       </div>
