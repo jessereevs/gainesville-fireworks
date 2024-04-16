@@ -12,6 +12,7 @@ import PackageImage from '@/public/images/package_images/assortment_1.jpg';
 let fireworkPackage: FireworkPackage = {
 	name: "Star Light",
 	description: "This is the description for the star light package. This package is very very very good. This is some other nonsense. These are random words: Firework BANG huge testing.",
+	includes: ["Firework 1 (Rocket)", "Firework 2 (Fountain)", "Firework 3 (Firecracker)"],
 	price: 100,
 	value: 150,
 	image: PackageImage
