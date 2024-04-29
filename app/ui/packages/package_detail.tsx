@@ -30,7 +30,7 @@ export default function PackageDetail({ fireworkPackage }: PackageDetailProps) {
 					<h2 className="font-bold mt-6">This package includes:</h2>
 					<ul>
 					{fireworkPackage.includes.map((firework) => (
-						<li className="">{firework}</li>
+						<li key={firework} className="">{firework}</li>
 					))}
 					<li className="text-xs mt-2 italic">Fireworks listed above that are not available at the time of purchase will be replaced with a firework from the same category of equal or greater value.</li>
 					</ul>
