@@ -1,12 +1,12 @@
 {
 	"packages": [
 		{
-			"id": "star-light",
-			"name": "Star Light",
+			"id": "1000-package",
+			"name": "$1000 Value Pack",
 			"description": "1 Rocket, 1 Fountain, 1 Firecracker",
 			"includes": ["Firework 1 (Rocket)", "Firework 2 (Fountain)", "Firework 3 (Firecracker)"],
-			"price": 100,
-			"image": "/images/package_images/assortment_1.jpg",
+			"price": 1000,
+			"image": "/images/package_images/1000-package/1000-package-full.jpg",
 			"href": "/packages/star-light"
 		},
 		{
