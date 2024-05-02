@@ -10,10 +10,10 @@ export default function Listing() {
 					Products
 				</h2>
 		
-				<div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
+				<div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:gap-x-8">
 					{Products.packages.map((product) => (
 					<a key={product.id} href={product.href} className="group">
-						<div className="aspect-h-1 aspect-w-2 w-full overflow-hidden rounded-lg sm:aspect-h-2 sm:aspect-w-3">
+						<div className="aspect-h-2 aspect-w-3 w-full overflow-hidden rounded-lg">
 						<Image
 							src={product.image}
 							alt="Image of the firework package."
