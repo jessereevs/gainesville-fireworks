@@ -4,7 +4,7 @@
 			"id": "1000-package",
 			"name": "Explosive Ensemble",
 			"description": "3 Reloadable Shells, 17 Repeaters, 2 Fountains, 3 Roman Candles, and more...",
-			"includes": ["Firework 1 (Rocket)", "Firework 2 (Fountain)", "Firework 3 (Firecracker)"],
+			"includes": ["3 500 Gram Repeater", "4 Fountains", "Firework 3 (Firecracker)"],
 			"price": 1000,
 			"image": "/images/package_images/1000-package/1000-package-full.jpg",
 			"href": "/packages/star-light"
