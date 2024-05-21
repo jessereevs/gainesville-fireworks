@@ -218,7 +218,7 @@ export default function FireworkListing() {
                             <img
                               src={product.image}
                               alt={product.imageAlt}
-                              className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+                              className="bg-white h-full w-full object-scale-down object-center lg:h-full lg:w-full"
                             />
                           </div>
                           <div className="mt-4 flex justify-between">
