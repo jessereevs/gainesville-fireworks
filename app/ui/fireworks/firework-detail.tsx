@@ -27,7 +27,6 @@ export default function FireworkDetail({ fireworkDetail }: FireworkDetailProps) 
         "category": "none",
         "price": 9999,
         "image": "",
-        "imageAlt": "",
         "href": "#"
     }
   }
@@ -50,13 +49,13 @@ export default function FireworkDetail({ fireworkDetail }: FireworkDetailProps) 
             onClick={toggleVisability}
             className="rounded-md bg-red-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
           >
-            Purchase Package
+            Purchase Item 
           </button>
         </div>
         <div className="flex w-fit h-fit">
           <Image
             src={firework.image}
-            alt={firework.imageAlt}
+            alt={firework.name}
             height={2110}
             width={1600}
             className="w-full object-cover object-center group-hover:opacity-75"

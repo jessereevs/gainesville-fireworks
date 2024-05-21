@@ -3,172 +3,434 @@
         {
             "id": "hammerOfThunder",
             "name": "Hammer of Thunder",
-            "description": "test description test",
-            "category": "reloadableShell",
+            "description": "Experience the raw power and explosive beauty with the Hammer of Thunder, a top-tier reloadable shell designed to create stunning aerial displays.",
+            "category": "Reloadable Shell",
             "price": 145,
             "image": "/images/individuals/hammerOfThunder.jpg",
-            "imageAlt": "Hammer of Thunder",
-            "href": "#"
+            "href": "/fireworks/hammerOfThunder"
         },
         {
             "id": "magnumArtillery",
             "name": "Magnum Artillery",
-            "description": "test description test",
-            "category": "reloadableShell",
+            "description": "Unleash the might of Magnum Artillery, a premium reloadable shell that delivers high-impact visuals and impressive bursts.",
+            "category": "Reloadable Shell",
             "price": 65,
             "image": "/images/individuals/magnumArtillery.jpg",
-            "imageAlt": "Magnum Artillery",
-            "href": "#"
+            "href": "/fireworks/magnumArtillery"
         },
         {
             "id": "captainJake",
             "name": "Captain Jake",
-            "description": "test description test",
-            "category": "repeaters500",
+            "description": "Set sail with Captain Jake, a 500 Gram Repeater that offers a swashbuckling display of colorful explosions and dynamic effects.",
+            "category": "500 Gram Repeaters",
             "price": 95,
             "image": "/images/individuals/captainJake.jpg",
-            "imageAlt": "Captain Jake",
-            "href": "#"
+            "href": "/fireworks/captainJake"
         },
         {
             "id": "downtownDisplay",
             "name": "Downtown Display",
-            "description": "test description test",
-            "category": "repeaters500",
+            "description": "Bring the city's energy to your celebration with Downtown Display, a 500 Gram Repeater that lights up the sky with vibrant patterns and spectacular bursts.",
+            "category": "500 Gram Repeaters",
             "price": 125,
             "image": "/images/individuals/downtownDisplay.jpg",
-            "imageAlt": "Downtown Display",
-            "href": "#"
+            "href": "/fireworks/downtownDisplay"
         },
         {
             "id": "route66",
             "name": "Route 66",
-            "description": "test description test",
-            "category": "repeaters500",
+            "description": "Hit the open road with Route 66, a 500 Gram Repeater that provides a thrilling journey of colors and explosive effects.",
+            "category": "500 Gram Repeaters",
             "price": 125,
             "image": "/images/individuals/route66.jpg",
-            "imageAlt": "Route 66",
-            "href": "#"
+            "href": "/fireworks/route66"
         },
         {
             "id": "shenanigans",
             "name": "Shenanigans",
-            "description": "test description test",
-            "category": "repeaters350",
+            "description": "Add some fun and mischief to your event with Shenanigans, a 350 Gram Repeater that offers a playful and dazzling display.",
+            "category": "350 Gram Repeaters",
             "price": 85,
             "image": "/images/individuals/shenanigans.jpg",
-            "imageAlt": "Shenanigans",
-            "href": "#"
+            "href": "/fireworks/shenanigans"
         },
         {
             "id": "patrioticMedley",
             "name": "Patriotic Medley",
-            "description": "test description test",
-            "category": "repeaters200",
+            "description": "Celebrate with pride using Patriotic Medley, a 200 Gram Repeater that features red, white, and blue bursts perfect for any patriotic event.",
+            "category": "200 Gram Repeaters",
             "price": 35,
             "image": "/images/individuals/patrioticMedley.jpg",
-            "imageAlt": "Patriotic Medly",
-            "href": "#"
+            "href": "/fireworks/patrioticMedley"
         },
         {
             "id": "sonsOfLiberty",
             "name": "Sons of Liberty",
-            "description": "test description test",
-            "category": "repeaters200",
+            "description": "Honor the spirit of independence with Sons of Liberty, a 200 Gram Repeater that delivers powerful and inspiring fireworks.",
+            "category": "200 Gram Repeaters",
             "price": 15,
             "image": "/images/individuals/sonsOfLiberty.jpg",
-            "imageAlt": "Sons of Liberty",
-            "href": "#"
+            "href": "/fireworks/sonsOfLiberty"
         },
         {
             "id": "special",
             "name": "Special",
-            "description": "test description test",
-            "category": "repeaters200",
+            "description": "Make any occasion extraordinary with Special, a 200 Gram Repeater that offers a delightful array of colors and effects.",
+            "category": "200 Gram Repeaters",
             "price": 35,
             "image": "/images/individuals/special.jpg",
-            "imageAlt": "Special",
-            "href": "#"
+            "href": "/fireworks/special"
         },
         {
             "id": "greatAmericanValuePack",
             "name": "Great American Value Pack",
-            "description": "test description test",
-            "category": "fountain",
+            "description": "Enjoy a classic display with the Great American Value Pack, a fountain set that provides a variety of vibrant and safe ground effects.",
+            "category": "Fountain",
             "price": 25,
             "image": "/images/individuals/greatAmericanValuePackFountains.jpg",
-            "imageAlt": "Great American Value Pack",
-            "href": "#"
+            "href": "/fireworks/greatAmericanValuePack"
         },
         {
-            "id": "barageCandle",
-            "name": "Barage Candle",
-            "description": "test description test",
-            "category": "romanCandles",
+            "id": "barrageCandle",
+            "name": "Barrage Candle",
+            "description": "Light up the night with Barrage Candle, a Roman Candle that delivers a rapid-fire sequence of bright and colorful stars.",
+            "category": "Roman Candles",
             "price": 40,
             "image": "/images/individuals/barrageCandle.jpg",
-            "imageAlt": "Barrage Candle",
-            "href": "#"
+            "href": "/fireworks/barrageCandle"
         },
         {
             "id": "classicRomanCandles",
             "name": "Classic Roman Candles",
-            "description": "test description test",
-            "category": "romanCandles",
+            "description": "Experience timeless fun with Classic Roman Candles, featuring a series of bright, colorful stars that shoot into the sky.",
+            "category": "Roman Candles",
             "price": 15,
             "image": "/images/individuals/classicRomanCandle.jpg",
-            "imageAlt": "Classic Roman Candle",
-            "href": "#"
+            "href": "/fireworks/classicRomanCandles"
         },
         {
             "id": "miniRomanCandles",
             "name": "Mini Roman Candles",
-            "description": "test description test",
-            "category": "romanCandles",
+            "description": "Perfect for smaller celebrations, Mini Roman Candles offer delightful bursts of color in a compact and convenient form.",
+            "category": "Roman Candles",
             "price": 10,
             "image": "/images/individuals/miniRomanCandle.jpg",
-            "imageAlt": "Mini Roman Candles",
-            "href": "#"
+            "href": "/fireworks/miniRomanCandles"
         },
         {
             "id": "firecrackerHalfBrick",
             "name": "1/2 Brick Firecrackers",
-            "description": "test description test",
-            "category": "firecrackers",
+            "description": "Add some excitement with 1/2 Brick Firecrackers, perfect for creating a loud and thrilling atmosphere at any celebration.",
+            "category": "Firecrackers",
             "price": 15,
             "image": "/images/individuals/firecrackerHalfBrick.jpg",
-            "imageAlt": "1/2 Brick Firecrackers",
-            "href": "#"
+            "href": "/fireworks/firecrackerHalfBrick"
         },
         {
             "id": "sparklers",
             "name": "Sparklers",
-            "description": "test description test",
-            "category": "misc",
+            "description": "Bring joy and light to any event with Sparklers, a classic novelty item that provides safe and fun handheld fireworks.",
+            "category": "Novelty",
             "price": 10,
             "image": "/images/individuals/sparklers.jpg",
-            "imageAlt": "Sparklers",
-            "href": "#"
+            "href": "/fireworks/sparklers"
         },
         {
-            "id": "",
-            "name": "",
-            "description": "test description test",
-            "category": "",
-            "price": 145,
-            "image": "/images/individuals/hammerOfThunder.jpg",
-            "imageAlt": "",
-            "href": "#"
+            "id": "spaceCapsules",
+            "name": "Space Capsules",
+            "description": "",
+            "category": "Novelty",
+            "price": 15,
+            "image": "/images/individuals/spaceCapsule.jpg",
+            "href": ""
         },
         {
-            "id": "",
-            "name": "",
-            "description": "test description test",
-            "category": "",
-            "price": 145,
-            "image": "/images/individuals/hammerOfThunder.jpg",
-            "imageAlt": "",
-            "href": "#"
+            "id": "titanRocket",
+            "name": "Titan Rocket",
+            "description": "",
+            "category": "Novelty",
+            "price": 25,
+            "image": "/images/individuals/titanRockets.jpg",
+            "href": ""
+        },
+        {
+            "id": "hitTheRoadJack",
+            "name": "Hit the Road Jack",
+            "description": "",
+            "category": "500 Gram Repeaters",
+            "price": 95,
+            "image": "/images/individuals/hitTheRoadJack.jpg",
+            "href": ""
+        },
+        {
+            "id": "victoryDay",
+            "name": "Victory Day",
+            "description": "",
+            "category": "500 Gram Repeaters",
+            "price": 110,
+            "image": "/images/individuals/victoryDay.jpg",
+            "href": ""
+        },
+        {
+            "id": "megaVolt",
+            "name": "Mega Volt",
+            "description": "",
+            "category": "200 Gram Repeaters",
+            "price": 85,
+            "image": "/images/individuals/megavolt.jpg",
+            "href": ""
+        },
+        {
+            "id": "celebrateAmerica",
+            "name": "Celebrate America",
+            "description": "",
+            "category": "500 Gram Repeaters",
+            "price": 110,
+            "image": "/images/individuals/celebrateAmerica.jpg",
+            "href": ""
+        },
+        {
+            "id": "miniMagnumArtillery",
+            "name": "Mini Magnum Artillery",
+            "description": "",
+            "category": "Reloadable Shell",
+            "price": 12,
+            "image": "/images/individuals/miniMagnumArtillery.jpg",
+            "href": ""
+        },
+        {
+            "id": "ladyLiberty",
+            "name": "Lady Liberty",
+            "description": "",
+            "category": "500 Gram Repeaters",
+            "price": 85,
+            "image": "/images/individuals/ladyLiberty.jpg",
+            "href": ""
+        },
+        {
+            "id": "twoIfBySea",
+            "name": "Two if by Sea",
+            "description": "",
+            "category": "500 Gram Repeaters",
+            "price": 95,
+            "image": "/images/individuals/twoIfBySea.jpg",
+            "href": ""
+        },
+        {
+            "id": "mobileMenace",
+            "name": "Mobile Menace",
+            "description": "",
+            "category": "200 Gram Repeaters",
+            "price": 40,
+            "image": "/images/individuals/mobileMenace.jpeg",
+            "href": ""
+        },
+        {
+            "id": "victoryCelebration",
+            "name": "Victory Celebration",
+            "description": "",
+            "category": "200 Gram Repeaters",
+            "price": 40,
+            "image": "/images/individuals/victoryCelebration.jpg",
+            "href": ""
+        },
+        {
+            "id": "rotaryCannon",
+            "name": "Rotary Cannon",
+            "description": "",
+            "category": "Roman Candles",
+            "price": 70,
+            "image": "/images/individuals/rotaryCannon.jpg",
+            "href": ""
+        },
+        {
+            "id": "giveMeLiberty",
+            "name": "Give Me Liberty",
+            "description": "",
+            "category": "500 Gram Repeaters",
+            "price": 85,
+            "image": "/images/individuals/giveMeLiberty.jpg",
+            "href": ""
+        },
+        {
+            "id": "letFreedomRing",
+            "name": "Let Freedom Ring",
+            "description": "",
+            "category": "200 Gram Repeaters",
+            "price": 35,
+            "image": "/images/individuals/letFreedomRing.jpg",
+            "href": ""
+        },
+        {
+            "id": "mobMadness",
+            "name": "Mob Madness",
+            "description": "",
+            "category": "500 Gram Repeaters",
+            "price": 95,
+            "image": "/images/individuals/mobMadness.jpg",
+            "href": ""
+        },
+        {
+            "id": "festivalBall",
+            "name": "Festival Ball",
+            "description": "",
+            "category": "Reloadable Shell",
+            "price": 40,
+            "image": "/images/individuals/festivalBallArtillery.jpg",
+            "href": ""
+        },
+        {
+            "id": "goldRush",
+            "name": "Gold Rush",
+            "description": "",
+            "category": "200 Gram Repeaters",
+            "price": 35,
+            "image": "/images/individuals/goldRush.jpg",
+            "href": ""
+        },
+        {
+            "id": "industrialRevolution",
+            "name": "Industrial Revolution",
+            "description": "",
+            "category": "200 Gram Repeaters",
+            "price": 35,
+            "image": "/images/individuals/industrialRevolution.jpg",
+            "href": ""
+        },
+        {
+            "id": "superDuty",
+            "name": "Super Duty",
+            "description": "",
+            "category": "350 Gram Repeaters",
+            "price": 55,
+            "image": "/images/individuals/superDuty.jpg",
+            "href": ""
+        },
+        {
+            "id": "greatAmerican8ShotAssortment",
+            "name": "Great American 8-Shot Assortment",
+            "description": "",
+            "category": "200 Gram Repeaters",
+            "price": 25,
+            "image": "/images/individuals/greatAmerican8ShotAssortment.jpg",
+            "href": ""
+        },
+        {
+            "id": "silverToRedStars",
+            "name": "Silver to Red Stars",
+            "description": "",
+            "category": "Roman Candles",
+            "price": 15,
+            "image": "/images/individuals/silverToRedStarsCandle.jpg",
+            "href": ""
+        },
+        {
+            "id": "cracklingCandles",
+            "name": "Crackling Candles",
+            "description": "",
+            "category": "Roman Candles",
+            "price": 15,
+            "image": "/images/individuals/cracklingCandle.jpg",
+            "href": ""
+        },
+        {
+            "id": "firecrackers1000Roll",
+            "name": "Roll of 1000 Firecrackers",
+            "description": "",
+            "category": "Firecrackers",
+            "price": 20,
+            "image": "/images/individuals/firecrackers1000Roll.jpg",
+            "href": ""
+        },
+        {
+            "id": "cracklingBall",
+            "name": "Crackling Balls",
+            "description": "",
+            "category": "Novelty",
+            "price": 10,
+            "image": "/images/individuals/cracklingBall.jpg",
+            "href": ""
+        },
+        {
+            "id": "blueThunder",
+            "name": "Blue Thunder",
+            "description": "",
+            "category": "Roman Candles",
+            "price": 15,
+            "image": "/images/individuals/blueThunder.jpg",
+            "href": ""
+        },
+        {
+            "id": "fullBore",
+            "name": "Full Bore",
+            "description": "",
+            "category": "Roman Candles",
+            "price": 25,
+            "image": "/images/individuals/fullBore.jpg",
+            "href": ""
+        },
+        {
+            "id": "romanCandleAssortment",
+            "name": "Roman Candle Assortment",
+            "description": "",
+            "category": "Roman Candles",
+            "price": 25,
+            "image": "/images/individuals/romanCandleAssortment.jpg",
+            "href": ""
+        },
+        {
+            "id": "killerValue",
+            "name": "Killer Value",
+            "description": "",
+            "category": "Assortment",
+            "price": 50,
+            "image": "/images/individuals/killerValue.jpg",
+            "href": ""
+        },
+        {
+            "id": "parachuteBottleRockets",
+            "name": "Parachute Bottle Rockets",
+            "description": "",
+            "category": "Rockets",
+            "price": 11,
+            "image": "/images/individuals/parachuteRocket.jpg",
+            "href": ""
+        },
+        {
+            "id": "blastCracker",
+            "name": "Blast Cracker",
+            "description": "",
+            "category": "Firecrackers",
+            "price": 5,
+            "image": "/images/individuals/blastCrackers.jpg",
+            "href": ""
+        },
+        {
+            "id": "whistlingMoonTravler",
+            "name": "Whistling Moon Travler",
+            "description": "",
+            "category": "Rockets",
+            "price": 15,
+            "image": "/images/individuals/whistlingMoonTravelers.jpg",
+            "href": ""
+        },
+        {
+            "id": "partyPoppers",
+            "name": "Party Poppers",
+            "description": "",
+            "category": "Novelty",
+            "price": 12,
+            "image": "/images/individuals/partyPoppers.jpg",
+            "href": ""
+        },
+        {
+            "id": "tankWithReport",
+            "name": "Tank with Report",
+            "description": "",
+            "category": "Novelty",
+            "price": 10,
+            "image": "/images/individuals/tankWithReport.jpg",
+            "href": ""
         }
     ]
 }
