@@ -1,0 +1,36 @@
+{
+  "packages": [
+    {
+      "id": "1000-package",
+      "name": "Explosive Ensemble",
+      "description": "Bring light to the night sky with our Ember Explosion Value Pack, consisting of 3 reloadable shells, 20 repeaters, 2 fountains, and more!",
+      "price": 1000,
+      "image": "/images/package/package-1000-total.jpg",
+      "href": "/packages/1000"
+    },
+    {
+      "id": "500-package",
+      "name": "Ember Explosion",
+      "description": "Bring light to the night sky with our Ember Explosion Value Pack, consisting of 3 reloadable shells, 20 repeaters, 2 fountains, and more!",
+      "price": 500,
+      "image": "/images/package/package-500-total.jpg",
+      "href": "/packages/500"
+    },
+    {
+      "id": "300-package",
+      "name": "Starlight Symphony Collection",
+      "description": "Bring light to the night sky with our Ember Explosion Value Pack, consisting of 3 reloadable shells, 20 repeaters, 2 fountains, and more!",
+      "price": 300,
+      "image": "/images/package/package-300-total.jpg",
+      "href": "/packages/300"
+    },
+    {
+      "id": "100-package",
+      "name": "Starlight Symphony Collection",
+      "description": "Bring light to the night sky with our Ember Explosion Value Pack, consisting of 3 reloadable shells, 20 repeaters, 2 fountains, and more!",
+      "price": 100,
+      "image": "/images/package/package-100-total.jpg",
+      "href": "/packages/100"
+    }
+  ]
+}

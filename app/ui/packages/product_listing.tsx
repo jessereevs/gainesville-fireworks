@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Products from "@/backendData/product-information.json";
+import Products from "@/backendData/packages.json";
 
 export default function Listing() {
 	return(

@@ -1,30 +1,30 @@
 import Image from 'next/image';
 
-import package1 from '@/public/images/package_images/assortment_1.jpg';
-import package2 from '@/public/images/package_images/assortment_2.jpg';
-import package3 from '@/public/images/package_images/assortment_3.jpg';
+import package1 from '@/public/images/package/package-1000-total.jpg';
+import package2 from '@/public/images/package/package-500-total.jpg';
+import package3 from '@/public/images/package/package-300-total.jpg';
 
 const callouts = [
 	{
-	  description: '1 Rocket, 1 Fountain, 1 Firecracker',
-	  name: 'Star Light',
+	  description: '$1000 Value Pack',
+	  name: 'UPDATE ME',
 	  image: package1,
-	  imageAlt: 'Image of package 1, containing: 1 Rocket, 1 Fountain, 1 Firecracker.',
-	  href: '/packages/star-light'
+	  imageAlt: 'UPDATE ME',
+	  href: '/packages/1000'
 	},
 	{
-	  description: '2 Rockets, 2 Fountains, 2 Firecrackers',
-	  name: 'Kiler Value',
+	  description: '$500 Value Pack',
+	  name: 'UPDATE ME',
 	  image: package2,
-	  imageAlt: 'Image of package 2, containing: 2 Rockets, 2 Fountains, 2 Firecrackers.',
-	  href: '#',
+	  imageAlt: 'UPDATE ME',
+	  href: '/packages/500'
 	},
 	{
-	  description: '3 Rockets, 3 Fountains, 3 Firecrackers',
-	  name: 'Two for the Show',
+	  description: '$300 Value Pack',
+	  name: 'UPDATE ME',
 	  image: package3,
-	  imageAlt: 'Image of package 3, containing: 3 Rockets, 3 Fountains, 3 Firecrackers.',
-	  href: '#',
+	  imageAlt: 'UPDATE ME',
+	  href: '/packages/300'
 	},
   ]
   
@@ -33,7 +33,7 @@ const callouts = [
 	  <div className="bg-gray-100">
 		<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 		  <div className="mx-auto max-w-2xl py-16 sm:py-24 lg:max-w-none lg:py-32">
-			<h2 className="text-2xl font-bold text-gray-900">Recommended Firework Packages</h2>
+			<h2 className="text-2xl font-bold text-gray-900">Recommended Value Packs</h2>
   
 			<div className="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0">
 			  {callouts.map((callout) => (
