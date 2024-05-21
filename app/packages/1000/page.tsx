@@ -10,9 +10,9 @@ import Footer from "@/app/ui/footer";
 import PackageImage from "@/public/images/package/package-1000-total.jpg";
 
 let fireworkPackage: FireworkPackage = {
-  name: "Explosive Ensemble",
+  name: "Extreme Explosive Ensemble",
   description:
-    "This is the description for the Explosive Ensemeble package. This package is very very very good. This is some other nonsense. These are random words: Firework BANG huge testing.",
+    "The Extreme Explosive Ensemble value pack is the ultimate fireworks collection, featuring an impressive array of reloadable shells, repeaters, and more, designed to deliver a spectacular and unforgettable display.",
   reloadableShells: [
     "Hammer of Thunder (24 Shot),",
     "Magnum Artillery (12 Shot),",

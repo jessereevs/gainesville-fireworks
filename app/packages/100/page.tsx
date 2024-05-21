@@ -10,9 +10,8 @@ import Footer from "@/app/ui/footer";
 import PackageImage from "@/public/images/package/package-100-total.jpg";
 
 let fireworkPackage: FireworkPackage = {
-  name: "Explosive Ensemble",
-  description:
-    "This is the description for the Explosive Ensemeble package. This package is very very very good. This is some other nonsense. These are random words: Firework BANG huge testing.",
+  name: "Eruption Spectacular",
+  description: "The Eruption Spectacular value pack offers a delightful mix of fireworks, perfect for adding a touch of magic and excitement to any celebration.",
   reloadableShells: [
     "Magnum Artillery (12 Shot),",
     "1 inch Mini Artillery (6 Shot)",
@@ -23,8 +22,8 @@ let fireworkPackage: FireworkPackage = {
     "1/2 Brick Firecrackers (640 Firecrackers),",
     "Sparklers 10 inch (12 boxes of 8)",
   ],
-  price: 300,
-  value: 445,
+  price: 100,
+  value: 152,
   image: PackageImage,
 };
 

@@ -7,23 +7,23 @@ import package3 from '@/public/images/package/package-300-total.jpg';
 const callouts = [
 	{
 	  description: '$1000 Value Pack',
-	  name: 'UPDATE ME',
+	  name: 'Extreme Explosive Ensemble',
 	  image: package1,
-	  imageAlt: 'UPDATE ME',
+	  imageAlt: 'Extreme Explosive Ensemble',
 	  href: '/packages/1000'
 	},
 	{
 	  description: '$500 Value Pack',
-	  name: 'UPDATE ME',
+	  name: 'Starlight Symphony Collection',
 	  image: package2,
-	  imageAlt: 'UPDATE ME',
+	  imageAlt: 'Starlight Symphony Collection',
 	  href: '/packages/500'
 	},
 	{
 	  description: '$300 Value Pack',
-	  name: 'UPDATE ME',
+	  name: 'Galaxy Burst Bundle',
 	  image: package3,
-	  imageAlt: 'UPDATE ME',
+	  imageAlt: 'Galaxy Burst Bundle',
 	  href: '/packages/300'
 	},
   ]

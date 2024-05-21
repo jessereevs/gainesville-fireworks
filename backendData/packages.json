@@ -2,32 +2,32 @@
   "packages": [
     {
       "id": "1000-package",
-      "name": "Explosive Ensemble",
-      "description": "Bring light to the night sky with our Ember Explosion Value Pack, consisting of 3 reloadable shells, 20 repeaters, 2 fountains, and more!",
+      "name": "Extreme Explosive Ensemble",
+      "description": "The Extreme Explosive Ensemble value pack is the ultimate fireworks collection, featuring an impressive array of reloadable shells, repeaters, and more, designed to deliver a spectacular and unforgettable display.",
       "price": 1000,
       "image": "/images/package/package-1000-total.jpg",
       "href": "/packages/1000"
     },
     {
       "id": "500-package",
-      "name": "Ember Explosion",
-      "description": "Bring light to the night sky with our Ember Explosion Value Pack, consisting of 3 reloadable shells, 20 repeaters, 2 fountains, and more!",
+      "name": "Starlight Symphony Collection",
+      "description": "The Starlight Symphony Collection value pack offers a dazzling assortment of fireworks, providing a spectacular and varied display perfect for any celebration.",
       "price": 500,
       "image": "/images/package/package-500-total.jpg",
       "href": "/packages/500"
     },
     {
       "id": "300-package",
-      "name": "Starlight Symphony Collection",
-      "description": "Bring light to the night sky with our Ember Explosion Value Pack, consisting of 3 reloadable shells, 20 repeaters, 2 fountains, and more!",
+      "name": "Galaxy Burst Bundle",
+      "description": "The Galaxy Burst Bundle value pack delivers an enchanting array of fireworks, perfect for creating a captivating and memorable display for any occasion.",
       "price": 300,
       "image": "/images/package/package-300-total.jpg",
       "href": "/packages/300"
     },
     {
       "id": "100-package",
-      "name": "Starlight Symphony Collection",
-      "description": "Bring light to the night sky with our Ember Explosion Value Pack, consisting of 3 reloadable shells, 20 repeaters, 2 fountains, and more!",
+      "name": "Eruption Spectacular",
+      "description": "The Eruption Spectacular value pack offers a delightful mix of fireworks, perfect for adding a touch of magic and excitement to any celebration.",
       "price": 100,
       "image": "/images/package/package-100-total.jpg",
       "href": "/packages/100"

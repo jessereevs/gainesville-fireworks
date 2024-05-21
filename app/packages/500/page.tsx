@@ -10,9 +10,9 @@ import Footer from "@/app/ui/footer";
 import PackageImage from "@/public/images/package/package-500-total.jpg";
 
 let fireworkPackage: FireworkPackage = {
-  name: "Explosive Ensemble",
+  name: "Starlight Symphony Collection",
   description:
-    "This is the description for the Explosive Ensemeble package. This package is very very very good. This is some other nonsense. These are random words: Firework BANG huge testing.",
+    "The Starlight Symphony Collection value pack offers a dazzling assortment of fireworks, providing a spectacular and varied display perfect for any celebration.",
   reloadableShells: [
     "Hammer of Thunder (24 Shot),",
     "Magnum Artillery (12 Shot)",

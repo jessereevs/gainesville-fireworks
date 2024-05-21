@@ -125,7 +125,7 @@ export default function FireworkListing() {
                           <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
                             <img
                               src={product.image}
-                              alt={product.imageAlt}
+                              alt={product.name}
                               className="bg-white h-full w-full object-scale-down object-center lg:h-full lg:w-full"
                             />
                           </div>
