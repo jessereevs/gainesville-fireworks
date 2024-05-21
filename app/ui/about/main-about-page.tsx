@@ -29,7 +29,7 @@ export default function AboutSection() {
             successfully ran the fireworks tent for several years until COVID-19
             hit in 2020. At that time, we had to readjust our business model.
             With many loyal clients, we thought, why not bring the fireworks to
-            them? So, we started delivering fireworks directly to clients' homes
+            them? So, we started delivering fireworks directly to clients homes
             or businesses. If everyone else delivers directly to you, why not
             fireworks as well?
           </p>
@@ -60,7 +60,7 @@ export default function AboutSection() {
           </div>
           <div className="max-w-xl text-base leading-7 text-gray-700 lg:col-span-7">
             <p className="font-bold">
-              We aim to make our clients' busy lives easier by bringing their
+              We aim to make our clients busy lives easier by bringing their
               fireworks to them!
             </p>
             <ul role="list" className="mt-8 max-w-xl space-y-8 text-gray-600">
