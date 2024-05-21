@@ -1,0 +1,174 @@
+{
+    "individuals": [
+        {
+            "id": "hammerOfThunder",
+            "name": "Hammer of Thunder",
+            "description": "test description test",
+            "category": "reloadableShell",
+            "price": 145,
+            "image": "/images/individuals/hammerOfThunder.jpg",
+            "imageAlt": "Hammer of Thunder",
+            "href": "#"
+        },
+        {
+            "id": "magnumArtillery",
+            "name": "Magnum Artillery",
+            "description": "test description test",
+            "category": "reloadableShell",
+            "price": 65,
+            "image": "/images/individuals/magnumArtillery.jpg",
+            "imageAlt": "Magnum Artillery",
+            "href": "#"
+        },
+        {
+            "id": "captainJake",
+            "name": "Captain Jake",
+            "description": "test description test",
+            "category": "repeaters500",
+            "price": 95,
+            "image": "/images/individuals/captainJake.jpg",
+            "imageAlt": "Captain Jake",
+            "href": "#"
+        },
+        {
+            "id": "downtownDisplay",
+            "name": "Downtown Display",
+            "description": "test description test",
+            "category": "repeaters500",
+            "price": 125,
+            "image": "/images/individuals/downtownDisplay.jpg",
+            "imageAlt": "Downtown Display",
+            "href": "#"
+        },
+        {
+            "id": "route66",
+            "name": "Route 66",
+            "description": "test description test",
+            "category": "repeaters500",
+            "price": 125,
+            "image": "/images/individuals/route66.jpg",
+            "imageAlt": "Route 66",
+            "href": "#"
+        },
+        {
+            "id": "shenanigans",
+            "name": "Shenanigans",
+            "description": "test description test",
+            "category": "repeaters350",
+            "price": 85,
+            "image": "/images/individuals/shenanigans.jpg",
+            "imageAlt": "Shenanigans",
+            "href": "#"
+        },
+        {
+            "id": "patrioticMedley",
+            "name": "Patriotic Medley",
+            "description": "test description test",
+            "category": "repeaters200",
+            "price": 35,
+            "image": "/images/individuals/patrioticMedley.jpg",
+            "imageAlt": "Patriotic Medly",
+            "href": "#"
+        },
+        {
+            "id": "sonsOfLiberty",
+            "name": "Sons of Liberty",
+            "description": "test description test",
+            "category": "repeaters200",
+            "price": 15,
+            "image": "/images/individuals/sonsOfLiberty.jpg",
+            "imageAlt": "Sons of Liberty",
+            "href": "#"
+        },
+        {
+            "id": "special",
+            "name": "Special",
+            "description": "test description test",
+            "category": "repeaters200",
+            "price": 35,
+            "image": "/images/individuals/special.jpg",
+            "imageAlt": "Special",
+            "href": "#"
+        },
+        {
+            "id": "greatAmericanValuePack",
+            "name": "Great American Value Pack",
+            "description": "test description test",
+            "category": "fountain",
+            "price": 25,
+            "image": "/images/individuals/greatAmericanValuePackFountains.jpg",
+            "imageAlt": "Great American Value Pack",
+            "href": "#"
+        },
+        {
+            "id": "barageCandle",
+            "name": "Barage Candle",
+            "description": "test description test",
+            "category": "romanCandles",
+            "price": 40,
+            "image": "/images/individuals/barrageCandle.jpg",
+            "imageAlt": "Barrage Candle",
+            "href": "#"
+        },
+        {
+            "id": "classicRomanCandles",
+            "name": "Classic Roman Candles",
+            "description": "test description test",
+            "category": "romanCandles",
+            "price": 15,
+            "image": "/images/individuals/classicRomanCandle.jpg",
+            "imageAlt": "Classic Roman Candle",
+            "href": "#"
+        },
+        {
+            "id": "miniRomanCandles",
+            "name": "Mini Roman Candles",
+            "description": "test description test",
+            "category": "romanCandles",
+            "price": 10,
+            "image": "/images/individuals/miniRomanCandle.jpg",
+            "imageAlt": "Mini Roman Candles",
+            "href": "#"
+        },
+        {
+            "id": "firecrackerHalfBrick",
+            "name": "1/2 Brick Firecrackers",
+            "description": "test description test",
+            "category": "firecrackers",
+            "price": 15,
+            "image": "/images/individuals/firecrackerHalfBrick.jpg",
+            "imageAlt": "1/2 Brick Firecrackers",
+            "href": "#"
+        },
+        {
+            "id": "sparklers",
+            "name": "Sparklers",
+            "description": "test description test",
+            "category": "misc",
+            "price": 10,
+            "image": "/images/individuals/sparklers.jpg",
+            "imageAlt": "Sparklers",
+            "href": "#"
+        },
+        {
+            "id": "",
+            "name": "",
+            "description": "test description test",
+            "category": "",
+            "price": 145,
+            "image": "/images/individuals/hammerOfThunder.jpg",
+            "imageAlt": "",
+            "href": "#"
+        },
+        {
+            "id": "",
+            "name": "",
+            "description": "test description test",
+            "category": "",
+            "price": 145,
+            "image": "/images/individuals/hammerOfThunder.jpg",
+            "imageAlt": "",
+            "href": "#"
+        }
+    ]
+}
