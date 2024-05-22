@@ -13,6 +13,7 @@ let fireworkPackage: FireworkPackage = {
   name: "Extreme Explosive Ensemble",
   description:
     "The Extreme Explosive Ensemble value pack is the ultimate fireworks collection, featuring an impressive array of reloadable shells, repeaters, and more, designed to deliver a spectacular and unforgettable display.",
+  amountOfFireworks: 28,
   reloadableShells: [
     "Hammer of Thunder (24 Shot),",
     "Magnum Artillery (12 Shot),",
@@ -39,6 +40,7 @@ let fireworkPackage: FireworkPackage = {
     "Gold Rush,",
     "Industrial Revoultion",
   ],
+  rockets: ["Titan Rockets (Pack of 12)"],
   fountains: ["Great American Value Pack (4 Pack)"],
   romanCandles: [
     "Barage Candle (196 Shots),",
@@ -48,8 +50,7 @@ let fireworkPackage: FireworkPackage = {
   misc: [
     "1/2 Brick Firecrackers (640 firecrackers),",
     "Sparklers 10 inch (12 boxes of 8),",
-    "Space Capsules (Pack of 4),",
-    "Titan Rockets (Pack of 12)",
+    "Space Capsules (Pack of 4)",
   ],
   price: 1000,
   value: 1501,

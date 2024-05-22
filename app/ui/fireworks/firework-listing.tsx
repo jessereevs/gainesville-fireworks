@@ -4,15 +4,16 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 import Individuals from "@/backendData/individuals.json";
 
 const subCategories = [
+  { name: "Reloadable Shells", href: "#" },
   { name: "500 Gram Repeater", href: "#" },
   { name: "350 Gram Repeater", href: "#" },
   { name: "200 Gram Repeater", href: "#" },
-  { name: "Reloadable Shells", href: "#" },
   { name: "Rockets", href: "#" },
   { name: "Roman Candles", href: "#" },
   { name: "Firecrackers", href: "#" },
   { name: "Fountains", href: "#" },
   { name: "Novelty's", href: "#" },
+  { name: "Assortments", href: "#" },
 ];
 
 export default function FireworkListing() {
@@ -90,7 +91,7 @@ export default function FireworkListing() {
         <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-24">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900">
-              Individual Fireworks
+              Fireworks
             </h1>
           </div>
 

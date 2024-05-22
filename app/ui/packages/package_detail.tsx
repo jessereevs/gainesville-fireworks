@@ -29,7 +29,7 @@ export default function PackageDetail({ fireworkPackage }: PackageDetailProps) {
             </span>
           </h2>
           <ul className="mt-3">
-            <li className=" font-bold text-xl mb-1">This Package Includes</li>
+            <li className=" font-bold text-xl mb-1">This Package Includes {fireworkPackage.amountOfFireworks} Fireworks</li>
             <ul className="flex flex-wrap gap-1 mb-2">
               {fireworkPackage.reloadableShells && (
                 <li className="font-bold">Reloadable Shells:</li>
@@ -69,6 +69,17 @@ export default function PackageDetail({ fireworkPackage }: PackageDetailProps) {
               )}
               {fireworkPackage.repeaters200 &&
                 fireworkPackage.repeaters200.map((firework) => (
+                  <li key={firework} className="">
+                    {firework}
+                  </li>
+                ))}
+            </ul>
+            <ul className="flex flex-wrap gap-1 mb-2">
+              {fireworkPackage.rockets && (
+                <li className="font-bold">Rockets:</li>
+              )}
+              {fireworkPackage.rockets &&
+                fireworkPackage.rockets.map((firework) => (
                   <li key={firework} className="">
                     {firework}
                   </li>

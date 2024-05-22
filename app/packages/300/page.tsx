@@ -13,6 +13,7 @@ let fireworkPackage: FireworkPackage = {
   name: "Galaxy Burst Bundle",
   description:
     "The Galaxy Burst Bundle value pack delivers an enchanting array of fireworks, perfect for creating a captivating and memorable display for any occasion.",
+  amountOfFireworks: 6,
   reloadableShells: [
     "Hammer of Thunder (24 Shot),",
     "Magnum Artillery (12 Shot)",

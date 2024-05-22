@@ -13,6 +13,7 @@ let fireworkPackage: FireworkPackage = {
   name: "Starlight Symphony Collection",
   description:
     "The Starlight Symphony Collection value pack offers a dazzling assortment of fireworks, providing a spectacular and varied display perfect for any celebration.",
+  amountOfFireworks: 15,
   reloadableShells: [
     "Hammer of Thunder (24 Shot),",
     "Magnum Artillery (12 Shot)",
@@ -28,7 +29,7 @@ let fireworkPackage: FireworkPackage = {
   ],
   misc: [
     "1/2 Brick Firecrackers (640 firecrackers),",
-    "Sparklers 10 inch (12 boxes of 8),",
+    "Sparklers 10 inch (12 boxes of 8)",
   ],
   price: 500,
   value: 845,

@@ -16,7 +16,7 @@ const callouts = [
 	  description: '$500 Value Pack',
 	  name: 'Starlight Symphony Collection',
 	  image: package2,
-	  imageAlt: 'Starlight Symphony Collection',
+	  imageAlt: 'Starry Night Symphony',
 	  href: '/packages/500'
 	},
 	{

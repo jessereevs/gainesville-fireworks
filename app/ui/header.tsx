@@ -1,13 +1,24 @@
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon, ShoppingCartIcon } from "@heroicons/react/24/outline";
-import Link from 'next/link';
+import {
+  Bars3Icon,
+  XMarkIcon,
+  ShoppingCartIcon,
+} from "@heroicons/react/24/outline";
+import Link from "next/link";
+import {Sansita_Swashed } from 'next/font/google';
+
+const sansita_swashed = Sansita_Swashed({
+	subsets: ['latin'],
+	display: 'swap',
+  })
 
 const navigation = [
   { name: "Home", href: "/" },
   { name: "Value Packs", href: "/packages" },
-  { name: "Individual Fireworks", href: "/fireworks" },
+  { name: "Fireworks", href: "/fireworks" },
   { name: "About", href: "/about" },
+  { name: "Contact", href: "/about" },
 ];
 
 export default function Header() {
@@ -25,7 +36,7 @@ export default function Header() {
       >
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
-            <h1 className="font-bold italic">Gainesville Fireworks</h1>
+            <h1 className="font-bold italic"><span className={sansita_swashed.className}>Gainesville Fireworks</span></h1>
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -50,6 +61,7 @@ export default function Header() {
           ))}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+          {/* 
           <button
             type="button"
             onClick={handleButtonClick}
@@ -57,6 +69,7 @@ export default function Header() {
           >
             Buy Now
           </button>
+          */}
           <Link href="/cart" className="pl-6 pt-2">
             <ShoppingCartIcon
               className="h-6 w-6 flex-shrink-0 text-white group-hover:text-white"
@@ -76,7 +89,7 @@ export default function Header() {
           <div className="flex items-center justify-between">
             <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Gainesville Fireworks</span>
-              <h1 className="font-bold italic">Gainesville Fireworks</h1>
+              <h1 className="font-bold italic"><span className={sansita_swashed.className}>Gainesville Fireworks</span></h1>
             </Link>
             <button
               type="button"
@@ -101,6 +114,7 @@ export default function Header() {
                 ))}
               </div>
               <div className="py-6 flex">
+                {/* 
                 <button
                   type="button"
                   onClick={handleButtonClick}
@@ -108,6 +122,7 @@ export default function Header() {
                 >
                   Buy Now
                 </button>
+                */}
                 <Link href="/cart" className="pl-6 pt-2">
                   <ShoppingCartIcon
                     className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"

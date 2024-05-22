@@ -12,6 +12,7 @@ import PackageImage from "@/public/images/package/package-100-total.jpg";
 let fireworkPackage: FireworkPackage = {
   name: "Eruption Spectacular",
   description: "The Eruption Spectacular value pack offers a delightful mix of fireworks, perfect for adding a touch of magic and excitement to any celebration.",
+  amountOfFireworks: 7,
   reloadableShells: [
     "Magnum Artillery (12 Shot),",
     "1 inch Mini Artillery (6 Shot)",

@@ -3,14 +3,14 @@ import { MinusSmallIcon, PlusSmallIcon } from '@heroicons/react/24/outline'
 
 const faqs = [
   {
-    question: "What are firework packages?",
+    question: "What are firework value packs?",
     answer:
-      "Firework packages are the best way to get the most BANG for you buck! Firework packages are collections of individual fireworks, offered at various price points, that allow you to host your own private fireworks show without the work of selecting each firework individually.",
+      "Firework value packs are the best way to get the most BANG for you buck! Firework value packs are collections of individual fireworks, offered at various price points, that allow you to host your own private fireworks show without the work of selecting each firework individually.",
   },
   {
-	question: "Can I add to the firework packages?",
+	question: "Can I add to the firework value packs?",
 	answer: 
-	  "YES! We have a wide variety of individual fireworks for purchase. Any combination of packages can be purchases alongside any combination of individual fireworks."
+	  "YES! We have a wide variety of individual fireworks for purchase. Any combination of value packs can be purchases alongside any combination of individual fireworks."
   },
   {
 	question: "Who is Gainesville Fireworks?",
