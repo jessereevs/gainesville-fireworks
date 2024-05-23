@@ -148,7 +148,7 @@
       "id": "titanRocket",
       "name": "Titan Rocket",
       "description": "Prepare for an explosion of color and excitement with our Titan Rocket fireworks! Launching high into the sky, these powerful novelties deliver an unforgettable spectacle that will amaze audiences of all ages.",
-      "category": "Rocket",
+      "category": "Rockets",
       "price": 25,
       "image": "/images/individuals/titanRockets.jpg",
       "href": "/fireworks/titanRocket"
@@ -301,8 +301,8 @@
     {
         "id": "superDuty",
         "name": "Super Duty",
-        "description": "Unleash the power with our Super Duty fireworks! These impressive 350-gram repeaters deliver a stunning display of colors and effects, creating a spectacle that will leave your audience in awe.",
-        "category": "350 Gram Repeaters",
+        "description": "Unleash the power with our Super Duty fireworks! These impressive 500-gram repeaters deliver a stunning display of colors and effects, creating a spectacle that will leave your audience in awe.",
+        "category": "500 Gram Repeaters",
         "price": 55,
         "image": "/images/individuals/superDuty.jpg",
         "href": "/fireworks/superDuty"
