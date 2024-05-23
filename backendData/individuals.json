@@ -4,7 +4,7 @@
       "id": "hammerOfThunder",
       "name": "Hammer of Thunder",
       "description": "Experience the raw power and explosive beauty with the Hammer of Thunder, a top-tier reloadable shell designed to create stunning aerial displays.",
-      "category": "Reloadable Shell",
+      "category": "Reloadable Shells",
       "price": 145,
       "image": "/images/individuals/hammerOfThunder.jpg",
       "href": "/fireworks/hammerOfThunder"
@@ -13,7 +13,7 @@
       "id": "magnumArtillery",
       "name": "Magnum Artillery",
       "description": "Unleash the might of Magnum Artillery, a premium reloadable shell that delivers high-impact visuals and impressive bursts.",
-      "category": "Reloadable Shell",
+      "category": "Reloadable Shells",
       "price": 65,
       "image": "/images/individuals/magnumArtillery.jpg",
       "href": "/fireworks/magnumArtillery"
@@ -85,7 +85,7 @@
       "id": "greatAmericanValuePack",
       "name": "Great American Value Pack",
       "description": "Enjoy a classic display with the Great American Value Pack, a fountain set that provides a variety of vibrant and safe ground effects.",
-      "category": "Fountain",
+      "category": "Fountains",
       "price": 25,
       "image": "/images/individuals/greatAmericanValuePackFountains.jpg",
       "href": "/fireworks/greatAmericanValuePack"
@@ -193,7 +193,7 @@
         "id": "miniMagnumArtillery",
         "name": "Mini Magnum Artillery",
         "description": "Experience the explosive power of our Mini Magnum Artillery fireworks! These reloadable shell fireworks pack a punch with their impressive bursts of color and sound, perfect for creating your own dazzling display.",
-        "category": "Reloadable Shell",
+        "category": "Reloadable Shells",
         "price": 12,
         "image": "/images/individuals/miniMagnumArtillery.jpg",
         "href": "/fireworks/miniMagnumArtillery"
@@ -275,7 +275,7 @@
         "id": "festivalBall",
         "name": "Festival Ball",
         "description": "Add a burst of excitement to your celebrations with our Festival Ball fireworks! These reloadable shell fireworks create a stunning display of colors and effects, making them a must-have for any event.",
-        "category": "Reloadable Shell",
+        "category": "Reloadable Shells",
         "price": 40,
         "image": "/images/individuals/festivalBallArtillery.jpg",
         "href": "/fireworks/festivalBall"
