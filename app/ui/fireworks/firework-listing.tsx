@@ -7,6 +7,7 @@ import {
   ReactNode,
   ReactPortal,
   useState,
+  useEffect
 } from "react";
 
 import { Dialog, Menu, Transition } from "@headlessui/react";
@@ -14,8 +15,6 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 import {
   FunnelIcon,
 } from "@heroicons/react/20/solid";
-
-import Individuals from "@/backendData/individuals.json";
 
 const subCategories = [
   { name: "All", href: "#" },
@@ -48,6 +47,29 @@ const categoryOrderMap: CategoryOrderMap = subCategories.reduce(
 export default function FireworkListing() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [fireworks, setFireworks] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchFireworks = async () => {
+      try {
+        const response = await fetch('/api/get-firework-details');
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        setFireworks(data.fireworks);
+      } catch (error: any) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+  
+
+    fetchFireworks();
+  }, []);
 
   const sortFireworksByCategory = (fireworks: any[]) => {
     return fireworks.sort(
@@ -59,7 +81,7 @@ export default function FireworkListing() {
     );
   };
 
-  const sortedIndividuals = sortFireworksByCategory(Individuals.individuals);
+  const sortedIndividuals = sortFireworksByCategory(fireworks);
 
   const filteredIndividuals =
     selectedCategory === "All"
@@ -196,7 +218,7 @@ export default function FireworkListing() {
                       {filteredIndividuals.map(
                         (product: {
                           id: Key | null | undefined;
-                          image: string | undefined;
+                          imagehref: string | undefined;
                           name:
                             | string
                             | number
@@ -229,14 +251,14 @@ export default function FireworkListing() {
                           <div key={product.id} className="group relative">
                             <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
                               <img
-                                src={product.image}
+                                src={product.imagehref}
                                 className="bg-white h-full w-full object-scale-down object-center lg:h-full lg:w-full"
                               />
                             </div>
                             <div className="mt-4 flex justify-between">
                               <div>
                                 <h3 className="text-sm text-gray-700">
-                                  <a href={product.href}>
+                                  <a href={"/fireworks/" + product.id}>
                                     <span
                                       aria-hidden="true"
                                       className="absolute inset-0"
