@@ -1,35 +1,54 @@
-import React, { useState } from "react";
-
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
-
-import Individuals from "@/backendData/individuals.json"
-
 import Alert from "@/app/ui/cart/item-added-alert";
 
 interface FireworkDetailProps {
   fireworkDetail: string;
 }
 
-export default function FireworkDetail({ fireworkDetail }: FireworkDetailProps) {
+export default function FireworkDetail({
+  fireworkDetail,
+}: FireworkDetailProps) {
   const [isVisable, setIsVisable] = useState(false);
+  const [fireworks, setFireworks] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchFireworks = async () => {
+      try {
+        const response = await fetch("/api/get-firework-details");
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        setFireworks(data.fireworks);
+      } catch (error: any) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchFireworks();
+  }, []);
 
   const toggleVisability = () => {
     setIsVisable(!isVisable);
   };
 
-  var firework = Individuals.individuals.find(item => item.id === fireworkDetail )
+  const defaultFirework = {
+    id: "loadingFirework",
+    name: "Loading...",
+    description: "",
+    category: "none",
+    price: 0,
+    imagehref: "",
+    href: "#",
+  };
 
-  if(firework === undefined ) {
-    firework = {
-        "id": "itemNotFound",
-        "name": "ITEM NOT FOUND",
-        "description": "ITEM NOT FOUND",
-        "category": "none",
-        "price": 9999,
-        "image": "",
-        "href": "#"
-    }
-  }
+  var firework = fireworks.find((item) => item["id"] === fireworkDetail) || defaultFirework;
+
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -39,9 +58,7 @@ export default function FireworkDetail({ fireworkDetail }: FireworkDetailProps) 
           <h1 className="font-bold text-3xl pb-2">{firework.name}</h1>
           <h2>
             ${firework.price} |{" "}
-            <span className="text-neutral-600">
-              {firework.category} 
-            </span>
+            <span className="text-neutral-600">{firework.category}</span>
           </h2>
           <h2 className="py-8">{firework.description}</h2>
           <button
@@ -49,12 +66,12 @@ export default function FireworkDetail({ fireworkDetail }: FireworkDetailProps) 
             onClick={toggleVisability}
             className="rounded-md bg-red-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
           >
-            Purchase Item 
+            Purchase Item
           </button>
         </div>
         <div className="flex w-fit h-fit">
           <Image
-            src={firework.image}
+            src={firework.imagehref}
             alt={firework.name}
             height={2110}
             width={1600}
