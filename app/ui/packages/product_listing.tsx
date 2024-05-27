@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import Products from "@/backendData/packages.json";
 
 export default function Listing() {
   const [packages, setPackages] = useState([]);
