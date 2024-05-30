@@ -1,9 +1,11 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import type { Metadata } from 'next';
+import './globals.css';
+import React from 'react';
+import { CartProvider } from './ui/CartContext';
 
 export const metadata: Metadata = {
-  title: "Gainesville Fireworks",
-  description: "Fireworks for sale in Gainesville, Florida.",
+  title: 'Gainesville Fireworks',
+  description: 'Fireworks for sale in Gainesville, Florida.',
 };
 
 export default function RootLayout({
@@ -14,7 +16,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {children}
+        <CartProvider>
+          {children}
+        </CartProvider>
       </body>
     </html>
   );

@@ -6,43 +6,14 @@ import {
 } from "@heroicons/react/20/solid";
 import CheckoutButton from "./checkout-button";
 import Image from "next/image";
-import Package1Image from "@/public/images/package_images/assortment_1.jpg";
-import Package2Image from "@/public/images/package_images/assortment_2.jpg";
-import Package3Image from "@/public/images/package_images/assortment_3.jpg";
-
-const products = [
-  {
-    id: 1,
-    name: "Star Light",
-    href: "#",
-    price: "$100.00",
-    color: "Basic Fireworks Package",
-    inStock: true,
-    imageSrc: Package1Image,
-    imageAlt: "Front of men's Basic Tee in sienna.",
-  },
-  {
-    id: 2,
-    name: "Killer Value",
-    href: "#",
-    price: "$225.00",
-    leadTime: "3-4 weeks",
-    inStock: false,
-    imageSrc: Package2Image,
-    imageAlt: "Front of men's Basic Tee in black.",
-  },
-  {
-    id: 3,
-    name: "Two for the Show",
-    href: "#",
-    price: "$300.00",
-    inStock: true,
-    imageSrc: Package3Image,
-    imageAlt: "Insulated bottle with white base and black snap lid.",
-  },
-];
+import React from "react";
+import { useCart } from "../CartContext";
+import FeaturedProducts from "../home/featured-packages";
 
 export default function ShoppingCart() {
+  const { cart } = useCart();
+  const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-2xl px-4 pb-24 pt-16 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -59,9 +30,10 @@ export default function ShoppingCart() {
               role="list"
               className="divide-y divide-gray-200 border-b border-t border-gray-200"
             >
-              {products.map((product, productIdx) => (
-                <li key={product.id} className="flex py-6 sm:py-10">
+              {cart.map((item, productIdx) => (
+                <li key={item.id} className="flex py-6 sm:py-10">
                   <div className="flex-shrink-0">
+                    {/* 
                     <Image
                       src={product.imageSrc}
                       alt={product.imageAlt}
@@ -69,6 +41,7 @@ export default function ShoppingCart() {
                       width={400}
                       className="h-28 w-20 rounded-md object-cover object-center sm:h-48 sm:w-48"
                     />
+                    */}
                   </div>
 
                   <div className="ml-4 flex flex-1 flex-col justify-between sm:ml-6">
@@ -76,19 +49,14 @@ export default function ShoppingCart() {
                       <div>
                         <div className="flex justify-between">
                           <h3 className="text-sm">
-                            <a
-                              href={product.href}
-                              className="font-medium text-gray-700 hover:text-gray-800"
-                            >
-                              {product.name}
-                            </a>
+                            
+                              {item.name}
                           </h3>
                         </div>
                         <div className="mt-1 flex text-sm">
-                          <p className="text-gray-500">{product.color}</p>
                         </div>
                         <p className="mt-1 text-sm font-medium text-gray-900">
-                          {product.price}
+                          {item.price}
                         </p>
                       </div>
 
@@ -97,7 +65,7 @@ export default function ShoppingCart() {
                           htmlFor={`quantity-${productIdx}`}
                           className="sr-only"
                         >
-                          Quantity, {product.name}
+                          Quantity, {item.name}
                         </label>
                         <select
                           id={`quantity-${productIdx}`}
@@ -125,26 +93,6 @@ export default function ShoppingCart() {
                         </div>
                       </div>
                     </div>
-
-                    <p className="mt-4 flex space-x-2 text-sm text-gray-700">
-                      {product.inStock ? (
-                        <CheckIcon
-                          className="h-5 w-5 flex-shrink-0 text-green-500"
-                          aria-hidden="true"
-                        />
-                      ) : (
-                        <ClockIcon
-                          className="h-5 w-5 flex-shrink-0 text-gray-300"
-                          aria-hidden="true"
-                        />
-                      )}
-
-                      <span>
-                        {product.inStock
-                          ? "In stock"
-                          : `Ships in ${product.leadTime}`}
-                      </span>
-                    </p>
                   </div>
                 </li>
               ))}
@@ -164,51 +112,11 @@ export default function ShoppingCart() {
             </h2>
 
             <dl className="mt-6 space-y-4">
-              <div className="flex items-center justify-between">
-                <dt className="text-sm text-gray-600">Subtotal</dt>
-                <dd className="text-sm font-medium text-gray-900">$99.00</dd>
-              </div>
-              <div className="flex items-center justify-between border-t border-gray-200 pt-4">
-                <dt className="flex items-center text-sm text-gray-600">
-                  <span>Shipping estimate</span>
-                  <a
-                    href="#"
-                    className="ml-2 flex-shrink-0 text-gray-400 hover:text-gray-500"
-                  >
-                    <span className="sr-only">
-                      Learn more about how shipping is calculated
-                    </span>
-                    <QuestionMarkCircleIcon
-                      className="h-5 w-5"
-                      aria-hidden="true"
-                    />
-                  </a>
-                </dt>
-                <dd className="text-sm font-medium text-gray-900">$5.00</dd>
-              </div>
-              <div className="flex items-center justify-between border-t border-gray-200 pt-4">
-                <dt className="flex text-sm text-gray-600">
-                  <span>Tax estimate</span>
-                  <a
-                    href="#"
-                    className="ml-2 flex-shrink-0 text-gray-400 hover:text-gray-500"
-                  >
-                    <span className="sr-only">
-                      Learn more about how tax is calculated
-                    </span>
-                    <QuestionMarkCircleIcon
-                      className="h-5 w-5"
-                      aria-hidden="true"
-                    />
-                  </a>
-                </dt>
-                <dd className="text-sm font-medium text-gray-900">$8.32</dd>
-              </div>
               <div className="flex items-center justify-between border-t border-gray-200 pt-4">
                 <dt className="text-base font-medium text-gray-900">
                   Order total
                 </dt>
-                <dd className="text-base font-medium text-gray-900">$112.32</dd>
+                <dd className="text-base font-medium text-gray-900">${total.toFixed(2)}</dd>
               </div>
             </dl>
 
@@ -218,6 +126,7 @@ export default function ShoppingCart() {
           </section>
         </form>
       </div>
+      <FeaturedProducts />
     </div>
   );
 }
