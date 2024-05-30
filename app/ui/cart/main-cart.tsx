@@ -11,7 +11,7 @@ import { useCart } from "../CartContext";
 import FeaturedProducts from "../home/featured-packages";
 
 export default function ShoppingCart() {
-  const { cart } = useCart();
+  const { cart, removeFromCart } = useCart();
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   return (
@@ -86,6 +86,7 @@ export default function ShoppingCart() {
                           <button
                             type="button"
                             className="-m-2 inline-flex p-2 text-gray-400 hover:text-gray-500"
+                            onClick={() => removeFromCart(item.id)}
                           >
                             <span className="sr-only">Remove</span>
                             <XMarkIcon className="h-5 w-5" aria-hidden="true" />
