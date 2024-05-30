@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import CustomPackageListing from "./custom-package-listing";
 
 export default function Listing() {
   const [packages, setPackages] = useState([]);
@@ -9,9 +10,9 @@ export default function Listing() {
   useEffect(() => {
     const fetchPackages = async () => {
       try {
-        const response = await fetch('/api/get-package-details');
+        const response = await fetch("/api/get-package-details");
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error("Network response was not ok");
         }
         const data = await response.json();
         setPackages(data.packages);
@@ -21,7 +22,6 @@ export default function Listing() {
         setLoading(false);
       }
     };
-  
 
     fetchPackages();
   }, []);
@@ -49,7 +49,9 @@ export default function Listing() {
                 <div className="mt-4 flex items-center justify-between text-base font-medium text-gray-900">
                   <div className="flex gap-2">
                     <h3>{product["name"]}</h3>
-                    <h4 className=" text-red-600 italic">(Click Here for Details)</h4>
+                    <h4 className=" text-red-600 italic">
+                      (Click Here for Details)
+                    </h4>
                   </div>
                   <p>${product["price"]}</p>
                 </div>
@@ -59,6 +61,8 @@ export default function Listing() {
               </a>
             ))}
           </div>
+          <div className="w-full border-zinc-400 border my-4"></div>
+          <CustomPackageListing />
         </div>
       </div>
     </div>
