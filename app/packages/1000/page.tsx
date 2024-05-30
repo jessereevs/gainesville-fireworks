@@ -10,6 +10,7 @@ import Footer from "@/app/ui/footer";
 import PackageImage from "@/public/images/package/package-1000-total.jpg";
 
 let fireworkPackage: FireworkPackage = {
+  id: "extremeExplosiveEnsemble",
   name: "Extreme Explosive Ensemble",
   description:
     "The Extreme Explosive Ensemble value pack is the ultimate fireworks collection, featuring an impressive array of reloadable shells, repeaters, and more, designed to deliver a spectacular and unforgettable display.",
@@ -54,7 +55,9 @@ let fireworkPackage: FireworkPackage = {
   ],
   price: 1000,
   value: 1501,
-  image: PackageImage,
+  imagehref: "/images/package/package-1000-total.jpg",
+  category: "Value Pack",
+  href: "/packages/1000"
 };
 
 export default function package1000() {

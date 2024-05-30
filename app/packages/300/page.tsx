@@ -10,6 +10,7 @@ import Footer from "@/app/ui/footer";
 import PackageImage from "@/public/images/package/package-300-total.jpg";
 
 let fireworkPackage: FireworkPackage = {
+  id: "galaxyBurstBundle",
   name: "Galaxy Burst Bundle",
   description:
     "The Galaxy Burst Bundle value pack delivers an enchanting array of fireworks, perfect for creating a captivating and memorable display for any occasion.",
@@ -27,7 +28,9 @@ let fireworkPackage: FireworkPackage = {
   ],
   price: 300,
   value: 445,
-  image: PackageImage,
+  imagehref: "/images/package/package-300-total.jpg",
+  category: "Value Pack",
+  href: "/packages/300"
 };
 
 export default function package500() {

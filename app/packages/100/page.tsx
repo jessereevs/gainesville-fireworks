@@ -7,9 +7,8 @@ import PackageDetail from "@/app/ui/packages/package_detail";
 import FeaturedProducts from "@/app/ui/home/featured-packages";
 import Footer from "@/app/ui/footer";
 
-import PackageImage from "@/public/images/package/package-100-total.jpg";
-
 let fireworkPackage: FireworkPackage = {
+  id: "eruptionSpectacular",
   name: "Eruption Spectacular",
   description: "The Eruption Spectacular value pack offers a delightful mix of fireworks, perfect for adding a touch of magic and excitement to any celebration.",
   amountOfFireworks: 7,
@@ -25,7 +24,9 @@ let fireworkPackage: FireworkPackage = {
   ],
   price: 100,
   value: 152,
-  image: PackageImage,
+  category: "Value Pack",
+  imagehref: "/images/package/package-100-total.jpg",
+  href: "/packages/100"
 };
 
 export default function package500() {
