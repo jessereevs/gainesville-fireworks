@@ -12,7 +12,7 @@ const navigation = [
   },
   {
 	name: "Instagram",
-	href: "#",
+	href: "https://www.instagram.com/gainesville.fireworks/",
 	icon: () => (
 		<Image src={Instagram_Logo} alt="Instagram Logo" width={20} height={20} />
 	)

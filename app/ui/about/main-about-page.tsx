@@ -34,17 +34,17 @@ export default function AboutSection() {
               About Us
             </h1>
             <p className="mt-6 text-xl leading-8 text-gray-700">
-              Gainesville Fireworks was started many years ago by a disabled,
-              paralyzed veteran to help supplement his income. For years, he
+              Gainesville Fireworks was started many years ago by a disabled
+              veteran to help supplement his income. For years, he
               operated a fireworks tent located on University Ave.
-              Unfortunately, and unexpectedly, his wife passed away in 2014,
+              Unfortunately, his wife passed away unexpectedly in 2014,
               leaving him without anyone to help run the tent. That’s when my
               family stepped in to assist him, as he was no longer able to
               manage it on his own. We successfully ran the fireworks tent for
               several years until COVID-19 hit in 2020. At that time, we had to
               readjust our business model. With many loyal clients, we thought,
               why not bring the fireworks to them? So, we started delivering
-              fireworks directly to clients homes or businesses. If everyone
+              fireworks directly to our clients homes or businesses. If everyone
               else delivers products directly to you, why not fireworks as well?
             </p>
           </div>
@@ -86,7 +86,7 @@ export default function AboutSection() {
                 />
                 <span>
                   <strong className="font-semibold text-gray-900">
-                    Competative Pricing.
+                    Competative Pricing
                   </strong>{" "}
                 </span>
               </li>
@@ -97,7 +97,7 @@ export default function AboutSection() {
                 />
                 <span>
                   <strong className="font-semibold text-gray-900">
-                    Direct Shipping.
+                    Direct Shipping
                   </strong>{" "}
                 </span>
               </li>
@@ -108,7 +108,7 @@ export default function AboutSection() {
                 />
                 <span>
                   <strong className="font-semibold text-gray-900">
-                    Customer Satisfaction.
+                    Customer Satisfaction
                   </strong>{" "}
                 </span>
               </li>

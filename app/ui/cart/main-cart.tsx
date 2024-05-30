@@ -43,29 +43,32 @@ export default function ShoppingCart() {
               {clientCart.map((item, productIdx) => (
                 <li key={item.id} className="flex py-6 sm:py-10">
                   <div className="flex-shrink-0">
-                    {/* 
                     <Image
-                      src={product.imageSrc}
-                      alt={product.imageAlt}
+                      src={item.imagehref}
+                      alt="Firework Image"
                       height={600}
                       width={400}
                       className="h-28 w-20 rounded-md object-cover object-center sm:h-48 sm:w-48"
                     />
-                    */}
                   </div>
 
                   <div className="ml-4 flex flex-1 flex-col justify-between sm:ml-6">
                     <div className="relative pr-9 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:pr-0">
                       <div>
                         <div className="flex justify-between">
-                          <h3 className="text-sm">
+                          <h3 className="text-sm font-bold">
                             {item.name}
+                          </h3>
+                        </div>
+                        <div className="flex justify-between">
+                          <h3 className="text-sm italic">
+                            {item.category}
                           </h3>
                         </div>
                         <div className="mt-1 flex text-sm">
                         </div>
                         <p className="mt-1 text-sm font-medium text-gray-900">
-                          {item.price}
+                          ${item.price}
                         </p>
                       </div>
 
