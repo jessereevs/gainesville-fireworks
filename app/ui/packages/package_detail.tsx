@@ -131,7 +131,7 @@ export default function PackageDetail({ fireworkPackage }: PackageDetailProps) {
         </div>
         <div className="flex w-fit h-fit">
           <Image
-            src={fireworkPackage.image}
+            src={fireworkPackage.imagehref}
             alt="Image of the firework package."
             height={1110}
             width={1600}
