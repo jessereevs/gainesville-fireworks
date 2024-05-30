@@ -1,34 +1,46 @@
 import { loadStripe } from "@stripe/stripe-js";
-import { useState } from "react";
+import React, { useState } from "react";
+import { useCart } from "../CartContext";
 
 const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!
 );
 
-const CheckoutButton = () => {
+const CheckoutButton: React.FC = () => {
+  const { cart } = useCart();
   const [loading, setLoading] = useState(false);
 
   const handleCheckout = async () => {
     setLoading(true);
-
-    const response = await fetch("/api/checkout-sessions", {
-      method: "POST",
-    });
-
-    const { id } = await response.json();
     const stripe = await stripePromise;
+    
+    try {
+      const response = await fetch('/api/checkout-sessions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ cart }),
+      });
 
-    if (stripe) {
-      const { error } = await stripe.redirectToCheckout({ sessionId: id });
-
-      if (error) {
-        console.error(error);
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
       }
-    } else {
-      console.error("Stripe failed to load.");
-    }
 
-    setLoading(false);
+      const session = await response.json();
+
+      const result = await stripe?.redirectToCheckout({
+        sessionId: session.id,
+      });
+
+      if (result?.error) {
+        console.error(result.error.message);
+      }
+    } catch (error) {
+      console.error('Error creating checkout session:', error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
