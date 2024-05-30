@@ -15,7 +15,7 @@ export default function PackageDetail({ fireworkPackage }: PackageDetailProps) {
   const [isVisable, setIsVisable] = useState(false);
 
   const toggleVisability = () => {
-    setIsVisable(!isVisable);
+    setIsVisable(true);
   };
 
   return (
