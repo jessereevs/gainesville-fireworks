@@ -1,7 +1,9 @@
 export interface FireworkPackage {
+	id: string;
 	name: string;
 	description: string;
 	amountOfFireworks: number;
+	category: string;
 	includes?: Array<string>;
 	reloadableShells?: Array<string>;
 	repeaters500?: Array<string>;
@@ -13,5 +15,6 @@ export interface FireworkPackage {
 	misc?: Array<string>;
 	price: number;
 	value: number;
-	image: any;
+	imagehref: any;
+	href: any;
 }

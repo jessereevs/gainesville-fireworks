@@ -5,6 +5,8 @@ import Image from "next/image";
 
 import Alert from "@/app/ui/cart/item-added-alert";
 
+import AddToCartButton from "../cart/addToCartButton";
+
 interface PackageDetailProps {
   fireworkPackage: FireworkPackage;
 }
@@ -123,13 +125,9 @@ export default function PackageDetail({ fireworkPackage }: PackageDetailProps) {
             </li>
           </ul>
           <h2 className="py-8">{fireworkPackage.description}</h2>
-          <button
-            type="button"
-            onClick={toggleVisability}
-            className="rounded-md bg-red-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
-          >
-            Purchase Package
-          </button>
+          <a onClick={toggleVisability}>
+            <AddToCartButton item={fireworkPackage} />
+          </a>
         </div>
         <div className="flex w-fit h-fit">
           <Image

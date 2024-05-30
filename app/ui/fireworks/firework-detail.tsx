@@ -48,8 +48,8 @@ export default function FireworkDetail({
     href: "#",
   };
 
-  var firework = fireworks.find((item) => item["id"] === fireworkDetail) || defaultFirework;
-
+  var firework =
+    fireworks.find((item) => item["id"] === fireworkDetail) || defaultFirework;
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -63,7 +63,7 @@ export default function FireworkDetail({
           </h2>
           <h2 className="py-8">{firework.description}</h2>
           <a onClick={toggleVisability}>
-          <AddToCartButton item={firework} />
+            <AddToCartButton item={firework} />
           </a>
         </div>
         <div className="flex w-fit h-fit">
