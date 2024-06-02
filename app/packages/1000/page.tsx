@@ -7,8 +7,6 @@ import PackageDetail from "@/app/ui/packages/package_detail";
 import FeaturedProducts from "@/app/ui/home/featured-packages";
 import Footer from "@/app/ui/footer";
 
-import PackageImage from "@/public/images/package/package-1000-total.jpg";
-
 let fireworkPackage: FireworkPackage = {
   id: "extremeExplosiveEnsemble",
   name: "Extreme Explosive Ensemble",
