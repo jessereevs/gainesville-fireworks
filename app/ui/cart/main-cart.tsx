@@ -88,7 +88,7 @@ export default function ShoppingCart() {
                             handleQuantityChange(item.id, parseInt(e.target.value))
                           }
                         >
-                          {[...Array(8)].map((_, i) => (
+                          {[...Array(10)].map((_, i) => (
                             <option key={i} value={i + 1}>
                               {i + 1}
                             </option>

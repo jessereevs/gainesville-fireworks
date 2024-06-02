@@ -6,13 +6,10 @@ export default function SuccessText() {
           Thank you for your purchase!
         </h2>
         <p className="mt-8 text-xl leading-8 text-gray-600">
-          This is some place holder text.
+         A Gainesville Fireworks represenitive will reach out shortly using the phone number provided to schedule a time for pick-up or delivery. 
         </p>
         <p className="mt-2 text-lg leading-8 text-gray-600">
-          The purpose of placeholder text is to hold the place of where real
-          text is going to go. That is why I am not using real text. I can even
-          put in question marks? It does not matter, cause this is place holder
-          text.
+          If you have any questions regarding your order, please <a href="/about">contact us</a> and our team will be happy to assist you.
         </p>
       </div>
     </div>
