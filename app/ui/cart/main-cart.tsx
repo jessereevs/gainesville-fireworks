@@ -4,23 +4,26 @@ import CheckoutButton from "./checkout-button";
 import Image from "next/image";
 import FeaturedProducts from "../home/featured-packages";
 import { XMarkIcon } from "@heroicons/react/24/outline";
+import UserInfoForm from "./user-info-form";
 
 export default function ShoppingCart() {
   const { cart, setCart, removeFromCart } = useCart();
   const [clientCart, setClientCart] = useState<typeof cart>([]);
+  const [isUserInfoValid, setIsUserInfoValid] = useState(false)
 
   useEffect(() => {
     // Ensure cart is only set on the client side to avoid hydration issues
     setClientCart(cart);
   }, [cart]);
 
-  const total = clientCart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const total = clientCart.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
 
   const handleQuantityChange = (id: string, quantity: number) => {
     setCart((prevCart) =>
-      prevCart.map((item) =>
-        item.id === id ? { ...item, quantity } : item
-      )
+      prevCart.map((item) => (item.id === id ? { ...item, quantity } : item))
     );
   };
 
@@ -56,17 +59,12 @@ export default function ShoppingCart() {
                     <div className="relative pr-9 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:pr-0">
                       <div>
                         <div className="flex justify-between">
-                          <h3 className="text-sm font-bold">
-                            {item.name}
-                          </h3>
+                          <h3 className="text-sm font-bold">{item.name}</h3>
                         </div>
                         <div className="flex justify-between">
-                          <h3 className="text-sm italic">
-                            {item.category}
-                          </h3>
+                          <h3 className="text-sm italic">{item.category}</h3>
                         </div>
-                        <div className="mt-1 flex text-sm">
-                        </div>
+                        <div className="mt-1 flex text-sm"></div>
                         <p className="mt-1 text-sm font-medium text-gray-900">
                           ${item.price}
                         </p>
@@ -85,7 +83,10 @@ export default function ShoppingCart() {
                           className="max-w-full rounded-md border border-gray-300 py-1.5 text-left text-base font-medium leading-5 text-gray-700 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
                           value={item.quantity}
                           onChange={(e) =>
-                            handleQuantityChange(item.id, parseInt(e.target.value))
+                            handleQuantityChange(
+                              item.id,
+                              parseInt(e.target.value)
+                            )
                           }
                         >
                           {[...Array(10)].map((_, i) => (
@@ -118,21 +119,26 @@ export default function ShoppingCart() {
             aria-labelledby="summary-heading"
             className="mt-16 rounded-lg bg-gray-50 px-4 py-6 sm:p-6 lg:col-span-5 lg:mt-0 lg:p-8"
           >
-            <h2 id="summary-heading" className="text-lg font-medium text-gray-900">
-              Order summary
+            <h2
+              id="summary-heading"
+              className="text-lg font-medium text-gray-900"
+            >
+             Checkout 
             </h2>
-
+            <UserInfoForm setValidationResult={setIsUserInfoValid}/>
             <dl className="mt-6 space-y-4">
               <div className="flex items-center justify-between border-t border-gray-200 pt-4">
                 <dt className="text-base font-medium text-gray-900">
                   Order total
                 </dt>
-                <dd className="text-base font-medium text-gray-900">${total.toFixed(2)}</dd>
+                <dd className="text-base font-medium text-gray-900">
+                  ${total.toFixed(2)}
+                </dd>
               </div>
             </dl>
 
             <div className="mt-6">
-              <CheckoutButton />
+              <CheckoutButton isEnabled={isUserInfoValid} />
             </div>
           </section>
         </form>

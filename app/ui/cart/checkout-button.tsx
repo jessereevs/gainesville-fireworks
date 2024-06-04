@@ -2,11 +2,15 @@ import { loadStripe } from "@stripe/stripe-js";
 import React, { useState } from "react";
 import { useCart } from "../CartContext";
 
+interface CheckoutButtonProps {
+  isEnabled: boolean
+}
+
 const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!
 );
 
-const CheckoutButton: React.FC = () => {
+const CheckoutButton: React.FC<CheckoutButtonProps> = ({isEnabled}) => {
   const { cart } = useCart();
   const [loading, setLoading] = useState(false);
 
@@ -45,11 +49,11 @@ const CheckoutButton: React.FC = () => {
 
   return (
     <button
-      className="w-full rounded-md border border-transparent bg-red-600 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-50"
+      className="w-full rounded-md border border-transparent bg-red-600 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-50 disabled:bg-zinc-300"
       onClick={handleCheckout}
-      disabled={loading}
+      disabled={!isEnabled}
     >
-      {loading ? "Loading..." : "Checkout"}
+      Checkout
     </button>
   );
 };

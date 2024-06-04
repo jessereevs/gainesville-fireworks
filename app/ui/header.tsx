@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import {
@@ -6,12 +8,12 @@ import {
   ShoppingCartIcon,
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import {Sansita_Swashed } from 'next/font/google';
+import { Sansita_Swashed } from "next/font/google";
 
 const sansita_swashed = Sansita_Swashed({
-	subsets: ['latin'],
-	display: 'swap',
-  })
+  subsets: ["latin"],
+  display: "swap",
+});
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -24,10 +26,6 @@ const navigation = [
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  function handleButtonClick() {
-    window.open("/packages", "_self");
-  }
-
   return (
     <header className="bg-black text-white">
       <nav
@@ -36,7 +34,11 @@ export default function Header() {
       >
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
-            <h1 className="font-bold italic"><span className={sansita_swashed.className}>Gainesville Fireworks</span></h1>
+            <h1 className="font-bold italic">
+              <span className={sansita_swashed.className}>
+                Gainesville Fireworks
+              </span>
+            </h1>
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -61,20 +63,16 @@ export default function Header() {
           ))}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          {/* 
-          <button
-            type="button"
-            onClick={handleButtonClick}
-            className="rounded-md bg-red-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
-          >
-            Buy Now
-          </button>
-          */}
-          <Link href="/cart" className="pl-6 pt-2">
+          <Link href="/cart" className="pl-6 pt-2 flex gap-2">
             <ShoppingCartIcon
-              className="h-6 w-6 flex-shrink-0 text-white group-hover:text-white"
+              className="h-6 w-6 flex-shrink-0 text-white group-hover:text-white mt-0.5"
               aria-hidden="true"
             />
+            {/*totalItems > 0 && (
+              <div className=" bg-red-600 rounded-lg border-2 border-red-700 px-1">
+                {totalItems}
+              </div>
+            )*/}
           </Link>
         </div>
       </nav>
@@ -89,7 +87,11 @@ export default function Header() {
           <div className="flex items-center justify-between">
             <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Gainesville Fireworks</span>
-              <h1 className="font-bold italic"><span className={sansita_swashed.className}>Gainesville Fireworks</span></h1>
+              <h1 className="font-bold italic">
+                <span className={sansita_swashed.className}>
+                  Gainesville Fireworks
+                </span>
+              </h1>
             </Link>
             <button
               type="button"
@@ -114,15 +116,6 @@ export default function Header() {
                 ))}
               </div>
               <div className="py-6 flex">
-                {/* 
-                <button
-                  type="button"
-                  onClick={handleButtonClick}
-                  className="rounded-md bg-red-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
-                >
-                  Buy Now
-                </button>
-                */}
                 <Link href="/cart" className="pl-6 pt-2">
                   <ShoppingCartIcon
                     className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
