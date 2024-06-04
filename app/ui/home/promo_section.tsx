@@ -77,7 +77,7 @@ export default function PromoPage() {
           <div className="h-48 w-full bg-white" />
         </div>
         <div className="relative py-32">
-          <h1 className="pb-4 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
+          <h1 className="pb-4 text-5xl font-bold tracking-tight text-white sm:text-6xl md:text-7xl">
             <span className={sansita_swashed.className}>
               Gainesville Fireworks
             </span>

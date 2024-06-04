@@ -27,7 +27,8 @@ const UserInfoForm: React.FC<UserInfoFormProps> = ({ setValidationResult }) => {
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const zipRegex = /^\d{5}(?:[-\s]\d{4})?$/;
-  const phoneRegex = /^(\+\d{1,2}\s?)?(\(\d{3}\)\s?\d{3}[-.\s]?\d{4})$/;
+  const phoneRegex = /^(\+\d{1,2}\s?)?(\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4})$/;
+
 
 
   const validateForm = (): boolean => {

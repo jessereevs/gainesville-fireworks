@@ -3,6 +3,11 @@ import { MinusSmallIcon, PlusSmallIcon } from "@heroicons/react/24/outline";
 
 const faqs = [
   {
+    question: "Who is Gainesville Fireworks?",
+    answer:
+      "Gainesville Fireworks was started many years ago by a disabled veteran to help supplement his income. For years, he operated a fireworks tent located on University Ave. To learn about his story, view our about page for more!",
+  },
+  {
     question: "What are firework value packs?",
     answer:
       "Firework value packs are the best way to get the most BANG for you buck! Firework value packs are collections of individual fireworks, offered at various price points, that allow you to host your own private fireworks show without the work of selecting each firework individually.",
@@ -11,11 +16,6 @@ const faqs = [
     question: "Can I add to the firework value packs?",
     answer:
       "YES! We have a wide variety of individual fireworks for purchase. Any combination of value packs can be purchased alongside any combination of individual fireworks.",
-  },
-  {
-    question: "Who is Gainesville Fireworks?",
-    answer:
-      "Gainesville Fireworks was started many years ago by a disabled veteran to help supplement his income. For years, he operated a fireworks tent located on University Ave. To learn about his story, view our about page for more!",
   },
 ];
 

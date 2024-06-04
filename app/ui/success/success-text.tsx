@@ -9,7 +9,7 @@ export default function SuccessText() {
          A Gainesville Fireworks represenitive will reach out shortly using the phone number provided to schedule a time for pick-up or delivery. 
         </p>
         <p className="mt-2 text-lg leading-8 text-gray-600">
-          If you have any questions regarding your order, please <a className="text-red-500 underline" href="/about">contact us</a> and our team will be happy to assist you.
+          If you have any questions regarding your order, please <a className="text-red-500 italic" href="/about">contact us</a> and our team will be happy to assist you.
         </p>
       </div>
     </div>

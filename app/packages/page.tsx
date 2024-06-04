@@ -9,7 +9,7 @@ export default function Packages() {
 		<main>
 			<Header />
 			<div className='mx-auto max-w-7xl px-4 pt-12 sm:px-6 lg:px-8'>
-				<h1 className='mx-auto max-w-3xl text-center font-bold text-3xl'>Value Packs</h1>
+				<h1 className='mx-auto max-w-3xl mt-6 text-center font-bold text-5xl'>Value Packs</h1>
 			</div>
 			<Products />
 			<Footer />
