@@ -11,10 +11,12 @@ const UserInfoForm: React.FC<UserInfoFormProps> = ({ setValidationResult }) => {
   const street1Ref = useRef<HTMLInputElement>(null);
   const street2Ref = useRef<HTMLInputElement>(null);
   const cityRef = useRef<HTMLInputElement>(null);
+  const stateRef = useRef<HTMLInputElement>(null);
   const zipRef = useRef<HTMLInputElement>(null);
   const TOSRef = useRef<HTMLInputElement>(null);
 
   const [city, setCity] = useState("");
+  const [state, setState] = useState("");
 
   const [nameValid, setNameValid] = useState(false);
   const [emailValid, setEmailValid] = useState(false);
@@ -22,14 +24,13 @@ const UserInfoForm: React.FC<UserInfoFormProps> = ({ setValidationResult }) => {
   const [street1Valid, setStreet1Valid] = useState(false);
   const [street2Valid, setStreet2Valid] = useState(false);
   const [cityValid, setCityValid] = useState(false);
+  const [stateValid, setStateValid] = useState(false);
   const [zipValid, setZipValid] = useState(false);
   const [tosValid, setTosValid] = useState(false);
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const zipRegex = /^\d{5}(?:[-\s]\d{4})?$/;
-  const phoneRegex = /^(\+\d{1,2}\s?)?(\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4})$/;
-
-
+  const phoneRegex = /^(\+\d{1,2}\s?)?(\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}|\d{10})$/
 
   const validateForm = (): boolean => {
     return (
@@ -38,6 +39,7 @@ const UserInfoForm: React.FC<UserInfoFormProps> = ({ setValidationResult }) => {
       phoneValid &&
       street1Valid &&
       cityValid &&
+      stateValid &&
       zipValid &&
       tosValid
     );
@@ -69,6 +71,12 @@ const UserInfoForm: React.FC<UserInfoFormProps> = ({ setValidationResult }) => {
     setCityValid(cityValue.trim() !== "");
   };
 
+  const handleStateChange = () => {
+    const stateValue = stateRef.current?.value || "";
+    setState(stateValue);
+    setStateValid(stateValue.trim() !== "");
+  };
+
   const handleZipChange = () => {
     setZipValid(zipRef.current ? zipRegex.test(zipRef.current.value) : false);
   };
@@ -85,6 +93,7 @@ const UserInfoForm: React.FC<UserInfoFormProps> = ({ setValidationResult }) => {
     street1Valid,
     street2Valid,
     cityValid,
+    stateValid,
     zipValid,
     tosValid,
     setValidationResult,
@@ -139,6 +148,7 @@ const UserInfoForm: React.FC<UserInfoFormProps> = ({ setValidationResult }) => {
           />
         </div>
         <div className="border border-zinc-200 mb-2"></div>
+        <h2 className="text-center mt-4 font-semibold">Delivery Information</h2>
         <div className="mb-4">
           <label
             htmlFor="street1"
@@ -182,7 +192,22 @@ const UserInfoForm: React.FC<UserInfoFormProps> = ({ setValidationResult }) => {
             onChange={handleCityChange}
             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
           />
-          {city !== "Gainesville" && city !== "" && (
+        </div>
+        <div className="mb-4">
+          <label
+            htmlFor="state"
+            className="block text-sm font-medium text-gray-700"
+          >
+           State 
+          </label>
+          <input
+            type="text"
+            id="state"
+            ref={stateRef}
+            onChange={handleStateChange}
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+          />
+          {!(city.toLowerCase() === "gainesville" && (state.toLowerCase() === "fl" || state.toLowerCase() === "florida")) && (
             <h1 className="text-red-600 my-1 font-bold px-2">
               You are located outside of our delivery zone. By checking out, you
               are agreeing to pick up your order at our physical location in
