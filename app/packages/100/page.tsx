@@ -8,10 +8,10 @@ import FeaturedProducts from "@/app/ui/home/featured-packages";
 import Footer from "@/app/ui/footer";
 
 let fireworkPackage: FireworkPackage = {
-  id: "eruptionSpectacular",
+  id: "100-package",
   name: "Eruption Spectacular",
   description: "The Eruption Spectacular value pack offers a delightful mix of fireworks, perfect for adding a touch of magic and excitement to any celebration.",
-  amountOfFireworks: 7,
+  amountOfFireworks: 6,
   reloadableShells: [
     "Magnum Artillery (12 Shot),",
     "1 inch Mini Artillery (6 Shot)",

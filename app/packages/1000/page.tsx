@@ -8,7 +8,7 @@ import FeaturedProducts from "@/app/ui/home/featured-packages";
 import Footer from "@/app/ui/footer";
 
 let fireworkPackage: FireworkPackage = {
-  id: "extremeExplosiveEnsemble",
+  id: "1000-package",
   name: "Extreme Explosive Ensemble",
   description:
     "The Extreme Explosive Ensemble value pack is the ultimate fireworks collection, featuring an impressive array of reloadable shells, repeaters, and more, designed to deliver a spectacular and unforgettable display.",

@@ -10,7 +10,7 @@ import Footer from "@/app/ui/footer";
 import PackageImage from "@/public/images/package/package-500-total.jpg";
 
 let fireworkPackage: FireworkPackage = {
-  id: "starlightSymphonyCollection",
+  id: "500-package",
   name: "Starlight Symphony Collection",
   description:
     "The Starlight Symphony Collection value pack offers a dazzling assortment of fireworks, providing a spectacular and varied display perfect for any celebration.",

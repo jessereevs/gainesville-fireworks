@@ -6,6 +6,7 @@ import { sql } from '@vercel/postgres';
 interface CartItem {
   id: string;
   name: string;
+  type: string;
   description: string;
   category: string;
   price: number;
@@ -44,32 +45,23 @@ export async function POST(req: NextRequest) {
     const orderId = orderResult.rows[0].id;
     console.log('Generated order ID:', orderId);
 
-    // Combine items with the same ID
-    const orderItems: { [key: string]: CartItem } = {};
-    cart.forEach((item) => {
-      if (orderItems[item.id]) {
-        orderItems[item.id].quantity += item.quantity;
-      } else {
-        orderItems[item.id] = { ...item };
-      }
-    });
-
-    // Insert order items
-    for (const itemId in orderItems) {
-      const item = orderItems[itemId];
-      const orderItemResult = await client.query(
-        `INSERT INTO order_items (
-          order_id, item_id, quantity, price
-        ) VALUES ($1, $2, $3, $4)`,
-        [orderId, item.id, item.quantity, item.price]
+    // Insert order items and update inventory
+    for (const cartItem of cart) {
+      await client.query(
+        `INSERT INTO order_items (order_id, item_id, quantity, price)
+        VALUES ($1, $2, $3, $4)`,
+        [orderId, cartItem.id, cartItem.quantity, cartItem.price]
       );
-      console.log(`Inserted order item for item ID ${item.id}:`, orderItemResult);
+
+      if (cartItem.category === 'Value Pack') {
+        await updatePackageInventory(client, cartItem.id, cartItem.quantity);
+      } else {
+        await updateInventory(client, cartItem.id, -cartItem.quantity);
+      }
+      console.log(`Inserted order item for item ID ${cartItem.id}`);
     }
 
     await client.query('COMMIT');
-
-    // Update inventory for each item in the cart
-    await Promise.all(Object.values(orderItems).map((item: any) => updateInventory(item.id, -item.quantity)));
 
     return NextResponse.json({ message: 'Order placed successfully' });
   } catch (error: any) {
@@ -79,10 +71,8 @@ export async function POST(req: NextRequest) {
   }
 }
 
-async function updateInventory(itemId: string, quantityChange: number): Promise<void> {
-  const client = await sql.connect();
+async function updateInventory(client: any, itemId: string, quantityChange: number): Promise<void> {
   try {
-    await client.query('BEGIN');
     const result = await client.query('SELECT inventory FROM fireworks WHERE id = $1', [itemId]);
     const currentInventory = result.rows[0]?.inventory;
 
@@ -97,11 +87,26 @@ async function updateInventory(itemId: string, quantityChange: number): Promise<
     }
 
     await client.query('UPDATE fireworks SET inventory = $1 WHERE id = $2', [newInventory, itemId]);
-    await client.query('COMMIT');
   } catch (error) {
-    await client.query('ROLLBACK');
     throw error;
-  } finally {
-    client.release();
+  }
+}
+
+async function updatePackageInventory(client: any, packageId: string, packageQuantity: number): Promise<void> {
+  try {
+    const packageItemsResult = await client.query('SELECT firework_id, quantity FROM package_composition WHERE package_id = $1', [packageId]);
+    const packageItems = packageItemsResult.rows;
+
+    if (packageItems.length === 0) {
+      throw new Error(`Package with ID ${packageId} has no items`);
+    }
+
+    for (const item of packageItems) {
+      const itemId = item.firework_id;
+      const itemQuantityChange = item.quantity * packageQuantity;
+      await updateInventory(client, itemId, -itemQuantityChange);
+    }
+  } catch (error) {
+    throw error;
   }
 }
