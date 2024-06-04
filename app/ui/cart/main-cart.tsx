@@ -8,13 +8,24 @@ import UserInfoForm from "./user-info-form";
 
 export default function ShoppingCart() {
   const { cart, setCart, removeFromCart } = useCart();
+  const [userInfo, setUserInfo] = useState({});
   const [clientCart, setClientCart] = useState<typeof cart>([]);
-  const [isUserInfoValid, setIsUserInfoValid] = useState(false)
+  const [isUserInfoValid, setIsUserInfoValid] = useState(false);
+
+  const handleFormChange = (updatedUserInfo: any) => {
+    setUserInfo(updatedUserInfo);
+  };
 
   useEffect(() => {
     // Ensure cart is only set on the client side to avoid hydration issues
     setClientCart(cart);
   }, [cart]);
+
+  useEffect(() => {
+    // Save user info and cart to local storage whenever they change
+    localStorage.setItem("userInfo", JSON.stringify(userInfo));
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [userInfo, cart]);
 
   const total = clientCart.reduce(
     (sum, item) => sum + item.price * item.quantity,
@@ -125,7 +136,7 @@ export default function ShoppingCart() {
             >
              Checkout 
             </h2>
-            <UserInfoForm setValidationResult={setIsUserInfoValid}/>
+            <UserInfoForm onFormChange={handleFormChange} setValidationResult={setIsUserInfoValid}/>
             <dl className="mt-6 space-y-4">
               <div className="flex items-center justify-between border-t border-gray-200 pt-4">
                 <dt className="text-base font-medium text-gray-900">

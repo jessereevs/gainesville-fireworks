@@ -2,9 +2,22 @@ import { useEffect, useRef, useState } from "react";
 
 interface UserInfoFormProps {
   setValidationResult: (isValid: boolean) => void;
+  onFormChange: (userInfo: UserInfo) => void; // Add this prop to pass user info up
 }
 
-const UserInfoForm: React.FC<UserInfoFormProps> = ({ setValidationResult }) => {
+interface UserInfo {
+  name: string;
+  email: string;
+  phone: string;
+  street1: string;
+  street2: string;
+  city: string;
+  state: string;
+  zip: string;
+  tos: boolean;
+}
+
+const UserInfoForm: React.FC<UserInfoFormProps> = ({ setValidationResult, onFormChange }) => {
   const nameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const phoneRef = useRef<HTMLInputElement>(null);
@@ -46,44 +59,66 @@ const UserInfoForm: React.FC<UserInfoFormProps> = ({ setValidationResult }) => {
   };
 
   const handleNameChange = () => {
-    setNameValid(nameRef.current?.value.trim() !== "");
+    const value = nameRef.current?.value.trim() || "";
+    setNameValid(value !== "");
+    onFormChange({ ...getUserInfo(), name: value });
   };
 
   const handleEmailChange = () => {
-    setEmailValid(
-      emailRef.current ? emailRegex.test(emailRef.current.value) : false
-    );
+    const value = emailRef.current?.value || "";
+    setEmailValid(emailRegex.test(value));
+    onFormChange({ ...getUserInfo(), email: value });
   };
 
   const handlePhoneChange = () => {
-    setPhoneValid(
-      phoneRef.current ? phoneRegex.test(phoneRef.current.value) : false
-    );
+    const value = phoneRef.current?.value || "";
+    setPhoneValid(phoneRegex.test(value));
+    onFormChange({ ...getUserInfo(), phone: value });
   };
 
   const handleStreet1Change = () => {
-    setStreet1Valid(street1Ref.current?.value.trim() !== "");
+    const value = street1Ref.current?.value.trim() || "";
+    setStreet1Valid(value !== "");
+    onFormChange({ ...getUserInfo(), street1: value });
   };
 
   const handleCityChange = () => {
     const cityValue = cityRef.current?.value || "";
     setCity(cityValue);
     setCityValid(cityValue.trim() !== "");
+    onFormChange({ ...getUserInfo(), city: cityValue });
   };
 
   const handleStateChange = () => {
     const stateValue = stateRef.current?.value || "";
     setState(stateValue);
     setStateValid(stateValue.trim() !== "");
+    onFormChange({ ...getUserInfo(), state: stateValue });
   };
 
   const handleZipChange = () => {
-    setZipValid(zipRef.current ? zipRegex.test(zipRef.current.value) : false);
+    const value = zipRef.current?.value || "";
+    setZipValid(zipRegex.test(value));
+    onFormChange({ ...getUserInfo(), zip: value });
   };
 
   const handleTosChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setTosValid(event.target.checked);
+    const checked = event.target.checked;
+    setTosValid(checked);
+    onFormChange({ ...getUserInfo(), tos: checked });
   };
+
+  const getUserInfo = (): UserInfo => ({
+    name: nameRef.current?.value || "",
+    email: emailRef.current?.value || "",
+    phone: phoneRef.current?.value || "",
+    street1: street1Ref.current?.value || "",
+    street2: street2Ref.current?.value || "",
+    city: cityRef.current?.value || "",
+    state: stateRef.current?.value || "",
+    zip: zipRef.current?.value || "",
+    tos: TOSRef.current?.checked || false,
+  });
 
   useEffect(() => {
     setValidationResult(validateForm());

@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { useCart } from "../ui/CartContext";
 
@@ -10,33 +9,51 @@ import SuccessText from "../ui/success/success-text";
 import FeaturedProducts from "../ui/home/featured-packages";
 import Footer from "../ui/footer";
 
-const Success = () => {
-  const router = useRouter();
-  const { clearCart } = useCart();
+const SuccessPage = () => {
+  const { cart, clearCart } = useCart();
+  const [userInfo, setUserInfo] = useState({});
+  const orderPlacedRef = useRef(false); // Ref to track if the API call was made
+  const [isUserInfoLoaded, setIsUserInfoLoaded] = useState(false); // State to track user info loading
 
   useEffect(() => {
-    // Fetch the cart from local storage or session storage
-    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
-    console.log("Cart retrieved from local storage:", cart);
+    console.log("useEffect called");
 
-    // Call the inventory update endpoint
-    const updateInventory = async () => {
+    if (typeof window !== "undefined") {
+      const storedUserInfo = JSON.parse(localStorage.getItem("userInfo") || "{}");
+      setUserInfo(storedUserInfo);
+      setIsUserInfoLoaded(true); // Set user info loaded state
+      console.log("User info set:", storedUserInfo);
+    }
+  }, []); // Empty dependency array to run only once on mount
+
+  useEffect(() => {
+    if (!isUserInfoLoaded || orderPlacedRef.current) return;
+
+    const updateInventoryAndRecordOrder = async () => {
+      if (orderPlacedRef.current) {
+        console.log("Order already placed, skipping API call");
+        return;
+      }
       try {
-        const response = await axios.post("/api/update-inventory", { cart });
-        console.log("Inventory updated successfully:", response.data);
-        // Clear the cart from local storage and context after successful inventory update
+        console.log("Calling /api/place-order");
+        const response = await axios.post("/api/place-order", { userInfo, cart });
+        console.log("Order placed successfully:", response.data);
+        // Clear the cart from local storage and context after successful order placement
         localStorage.removeItem("cart");
+        localStorage.removeItem("userInfo");
         clearCart();
-        console.log("Cart cleared from local storage and context");
+        orderPlacedRef.current = true; // Mark API call as made
       } catch (error) {
-        console.error("Error updating inventory:", error);
+        console.error("Error placing order:", error);
       }
     };
 
-    if (cart.length > 0) {
-      updateInventory();
+    if (cart.length > 0 && Object.keys(userInfo).length > 0 && !orderPlacedRef.current) {
+      updateInventoryAndRecordOrder();
     }
-  }, [clearCart]);
+  }, [cart, clearCart, isUserInfoLoaded, userInfo]); // Dependency array ensures this effect runs only when userInfo is loaded
+
+  console.log("Render SuccessPage", { cart, userInfo, orderPlacedRef: orderPlacedRef.current });
 
   return (
     <div>
@@ -48,4 +65,4 @@ const Success = () => {
   );
 };
 
-export default Success;
+export default SuccessPage;
