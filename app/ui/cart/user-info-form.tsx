@@ -14,6 +14,8 @@ const UserInfoForm: React.FC<UserInfoFormProps> = ({ setValidationResult }) => {
   const zipRef = useRef<HTMLInputElement>(null);
   const TOSRef = useRef<HTMLInputElement>(null);
 
+  const [city, setCity] = useState("");
+
   const [nameValid, setNameValid] = useState(false);
   const [emailValid, setEmailValid] = useState(false);
   const [phoneValid, setPhoneValid] = useState(false);
@@ -25,7 +27,8 @@ const UserInfoForm: React.FC<UserInfoFormProps> = ({ setValidationResult }) => {
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const zipRegex = /^\d{5}(?:[-\s]\d{4})?$/;
-  const phoneRegex = /^\+?(\d.*){3,}$/;
+  const phoneRegex = /^(\+\d{1,2}\s?)?(\(\d{3}\)\s?\d{3}[-.\s]?\d{4})$/;
+
 
   const validateForm = (): boolean => {
     return (
@@ -60,7 +63,9 @@ const UserInfoForm: React.FC<UserInfoFormProps> = ({ setValidationResult }) => {
   };
 
   const handleCityChange = () => {
-    setCityValid(cityRef.current?.value.trim() !== "");
+    const cityValue = cityRef.current?.value || "";
+    setCity(cityValue);
+    setCityValid(cityValue.trim() !== "");
   };
 
   const handleZipChange = () => {
@@ -176,6 +181,13 @@ const UserInfoForm: React.FC<UserInfoFormProps> = ({ setValidationResult }) => {
             onChange={handleCityChange}
             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
           />
+          {city !== "Gainesville" && city !== "" && (
+            <h1 className="text-red-600 my-1 font-bold px-2">
+              You are located outside of our delivery zone. By checking out, you
+              are agreeing to pick up your order at our physical location in
+              Gainesville, Florida.
+            </h1>
+          )}
         </div>
         <div className="mb-4">
           <label

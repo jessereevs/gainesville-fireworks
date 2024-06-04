@@ -51,9 +51,9 @@ const CheckoutButton: React.FC<CheckoutButtonProps> = ({isEnabled}) => {
     <button
       className="w-full rounded-md border border-transparent bg-red-600 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-50 disabled:bg-zinc-300"
       onClick={handleCheckout}
-      disabled={!isEnabled}
+      disabled={!isEnabled || loading}
     >
-      Checkout
+      {loading ? "Processing..." : "Checkout"}
     </button>
   );
 };

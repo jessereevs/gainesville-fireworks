@@ -3,7 +3,7 @@ export default function TosContent() {
     <div className="flex flex-col max-w-2xl mb-10 p-6">
       <h1 className="font-bold text-6xl my-6 text-center">Terms of Sale</h1>
       <p className="my-4">
-        By selecting the "I Agree" checkbox on the checkout screen you agree/promise as a
+        By selecting the &quot;I Agree&quot; checkbox on the checkout screen you agree/promise as a
         condition of this sale that you will abide by the laws in place where
         you use these fireworks. Failure to do so could result in fines and/or
         confiscation of products. We will not be held responsible in any way for
