@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Dialog } from "@headlessui/react";
 import {
   Bars3Icon,
@@ -15,6 +15,8 @@ const sansita_swashed = Sansita_Swashed({
   display: "swap",
 });
 
+import { useCart } from "./CartContext";
+
 const navigation = [
   { name: "Home", href: "/" },
   { name: "Value Packs", href: "/packages" },
@@ -25,6 +27,12 @@ const navigation = [
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { totalItems } = useCart();
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   return (
     <header className="bg-black text-white">
@@ -68,11 +76,11 @@ export default function Header() {
               className="h-6 w-6 flex-shrink-0 text-white group-hover:text-white mt-0.5"
               aria-hidden="true"
             />
-            {/*totalItems > 0 && (
+            {isMounted && totalItems > 0 && (
               <div className=" bg-red-600 rounded-lg border-2 border-red-700 px-1">
                 {totalItems}
               </div>
-            )*/}
+            )}
           </Link>
         </div>
       </nav>
