@@ -17,7 +17,10 @@ interface UserInfo {
   tos: boolean;
 }
 
-const UserInfoForm: React.FC<UserInfoFormProps> = ({ setValidationResult, onFormChange }) => {
+const UserInfoForm: React.FC<UserInfoFormProps> = ({
+  setValidationResult,
+  onFormChange,
+}) => {
   const nameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const phoneRef = useRef<HTMLInputElement>(null);
@@ -43,7 +46,8 @@ const UserInfoForm: React.FC<UserInfoFormProps> = ({ setValidationResult, onForm
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const zipRegex = /^\d{5}(?:[-\s]\d{4})?$/;
-  const phoneRegex = /^(\+\d{1,2}\s?)?(\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}|\d{10})$/
+  const phoneRegex =
+    /^(\+\d{1,2}\s?)?(\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}|\d{10})$/;
 
   const validateForm = (): boolean => {
     return (
@@ -233,7 +237,7 @@ const UserInfoForm: React.FC<UserInfoFormProps> = ({ setValidationResult, onForm
             htmlFor="state"
             className="block text-sm font-medium text-gray-700"
           >
-           State 
+            State
           </label>
           <input
             type="text"
@@ -242,13 +246,18 @@ const UserInfoForm: React.FC<UserInfoFormProps> = ({ setValidationResult, onForm
             onChange={handleStateChange}
             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
           />
-          {!(city.toLowerCase() === "gainesville" && (state.toLowerCase() === "fl" || state.toLowerCase() === "florida")) && (
-            <h1 className="text-red-600 my-1 font-bold px-2">
-              You are located outside of our delivery zone. By checking out, you
-              are agreeing to pick up your order at our physical location in
-              Gainesville, Florida.
-            </h1>
-          )}
+          {!(
+            city.toLowerCase() === "gainesville" &&
+            (state.toLowerCase() === "fl" || state.toLowerCase() === "florida")
+          ) &&
+            city !== "" &&
+            state !== "" && (
+              <h1 className="text-red-600 my-1 font-bold px-2">
+                You are located outside of our delivery zone. By checking out,
+                you are agreeing to pick up your order at our physical location
+                in Gainesville, Florida.
+              </h1>
+            )}
         </div>
         <div className="mb-4">
           <label
