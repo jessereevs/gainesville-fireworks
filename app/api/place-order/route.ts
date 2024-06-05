@@ -3,6 +3,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { sql } from '@vercel/postgres';
 
+
+export const revalidate = 1;
+
 interface CartItem {
   id: string;
   name: string;

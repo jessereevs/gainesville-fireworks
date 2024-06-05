@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { sql } from '@vercel/postgres';
 
+export const revalidate = 1;
+
 export async function GET(req: NextRequest) {
   try {
     const result = await sql`
@@ -14,6 +16,7 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ fireworks }, {
       status: 200,
       headers: {
+        'cache': 'no-store',
         'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
         'Pragma': 'no-cache',
         'Expires': '0',
