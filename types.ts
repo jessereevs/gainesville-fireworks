@@ -18,3 +18,14 @@ export interface FireworkPackage {
 	imagehref: any;
 	href: any;
 }
+
+export interface Firework {
+	id: string;
+	name: string;
+	description: string;
+	category: string;
+	inventory: number;
+	price: number;
+	imagehref: string;
+	href: string;
+}

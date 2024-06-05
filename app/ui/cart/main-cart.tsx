@@ -11,6 +11,8 @@ export default function ShoppingCart() {
   const [userInfo, setUserInfo] = useState({});
   const [clientCart, setClientCart] = useState<typeof cart>([]);
   const [isUserInfoValid, setIsUserInfoValid] = useState(false);
+  const [inventoryData, setInventoryData] = useState<{ [key: string]: number }>({});
+  const [insufficientInventoryItems, setInsufficientInventoryItems] = useState<string[]>([]);
 
   const handleFormChange = (updatedUserInfo: any) => {
     setUserInfo(updatedUserInfo);
@@ -26,6 +28,45 @@ export default function ShoppingCart() {
     localStorage.setItem("userInfo", JSON.stringify(userInfo));
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [userInfo, cart]);
+
+  useEffect(() => {
+    const fetchInventory = async () => {
+      try {
+        const response = await fetch(`/api/get-firework-details?timestamp=${new Date().getTime()}`, {
+          headers: {
+            'Cache-Control': 'no-store',
+          },
+        });
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        const inventory = data.fireworks.reduce((acc: { [key: string]: number }, firework: { id: string, inventory: number }) => {
+          acc[firework.id] = firework.inventory;
+          return acc;
+        }, {});
+        setInventoryData(inventory);
+      } catch (error) {
+        console.error("Error fetching inventory data:", error);
+      }
+    };
+
+    fetchInventory();
+  }, []);
+
+  useEffect(() => {
+    const checkInventory = () => {
+      const insufficientItems = clientCart.filter((item) => {
+        const inventory = inventoryData[item.id] || 0;
+        return item.quantity > inventory;
+      }).map((item) => item.name);
+      setInsufficientInventoryItems(insufficientItems);
+    };
+
+    if (Object.keys(inventoryData).length > 0) {
+      checkInventory();
+    }
+  }, [clientCart, inventoryData]);
 
   const total = clientCart.reduce(
     (sum, item) => sum + item.price * item.quantity,
@@ -134,9 +175,9 @@ export default function ShoppingCart() {
               id="summary-heading"
               className="text-lg font-medium text-gray-900"
             >
-             Checkout 
+              Checkout
             </h2>
-            <UserInfoForm onFormChange={handleFormChange} setValidationResult={setIsUserInfoValid}/>
+            <UserInfoForm onFormChange={handleFormChange} setValidationResult={setIsUserInfoValid} />
             <dl className="mt-6 space-y-4">
               <div className="flex items-center justify-between border-t border-gray-200 pt-4">
                 <dt className="text-base font-medium text-gray-900">
@@ -149,7 +190,19 @@ export default function ShoppingCart() {
             </dl>
 
             <div className="mt-6">
-              <CheckoutButton isEnabled={isUserInfoValid} />
+              {insufficientInventoryItems.length === 0 ? (
+                <CheckoutButton isEnabled={isUserInfoValid} />
+              ) : (
+                <div>
+                  <p className="text-red-600">Please decrease the quantity of these items:</p>
+                  <ul className="text-red-600 list-disc ml-5">
+                    {insufficientInventoryItems.map((itemName, idx) => (
+                      <li key={idx}>{itemName}</li>
+                    ))}
+                  </ul>
+                  <h1 className="mt-3 text-red-600">At this time, we do not have the inventory to fulfill an order of this size. Please contact us if you wish to place a custom order.</h1>
+                </div>
+              )}
             </div>
           </section>
         </form>

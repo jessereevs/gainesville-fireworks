@@ -1,13 +1,26 @@
+import { NextRequest, NextResponse } from 'next/server';
 import { sql } from '@vercel/postgres';
-import { NextResponse } from 'next/server';
 
-export async function GET(request: Request) {
-    try {
-        const result = await sql`SELECT * FROM Fireworks;`;
-        const fireworks = result.rows;
-        return NextResponse.json({ fireworks }, { status: 200 });
-    } catch (error) {
-        console.error('Error fetching fireworks:', error);
-        return NextResponse.json({ error: 'Failed to fetch fireworks' }, { status: 500 });
-    }
+export async function GET(req: NextRequest) {
+  try {
+    const result = await sql`
+      SELECT id, name, description, category, inventory, price, imagehref 
+      FROM fireworks 
+      WHERE inventory > 0;
+    `;
+    const fireworks = result.rows;
+    console.log("Fetched fireworks from database:", fireworks); // Debug log
+
+    return NextResponse.json({ fireworks }, {
+      status: 200,
+      headers: {
+        'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+        'Pragma': 'no-cache',
+        'Expires': '0',
+      },
+    });
+  } catch (error) {
+    console.error('Error fetching fireworks:', error);
+    return NextResponse.json({ error: 'Failed to fetch fireworks' }, { status: 500 });
+  }
 }
