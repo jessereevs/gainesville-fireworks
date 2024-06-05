@@ -1,0 +1,84 @@
+PAGE 1 INVENTORY UPDATES
+
+UPDATE fireworks
+SET inventory = CASE 
+    WHEN id = 'hammerOfThunder' THEN 53
+    WHEN id = 'magnumArtillery' THEN 138
+    WHEN id = 'captainJake' THEN 12
+    WHEN id = 'hitTheRoadJack' THEN 12
+    WHEN id = 'victoryDay' THEN 16
+    WHEN id = 'megaVolt' THEN 7
+    WHEN id = 'shenanigans' THEN 6
+    WHEN id = 'celebrateAmerica' THEN 8
+    WHEN id = 'downtownDisplay' THEN 10
+    WHEN id = 'miniMagnumArtillery' THEN 418
+    WHEN id = 'route66' THEN 16
+    WHEN id = 'ladyLiberty' THEN 14
+    WHEN id = 'greatAmericanValuePack' THEN 115
+    WHEN id = 'twoIfBySea' THEN 14
+    WHEN id = 'mobileMenace' THEN 15
+    ELSE inventory
+END
+WHERE id IN ('hammerOfThunder', 'magnumArtillery', 'captainJake', 'hitTheRoadJack', 'victoryDay', 'megaVolt', 'shenanigans', 'celebrateAmerica', 'downtownDisplay', 'miniMagnumArtillery', 'route66', 'ladyLiberty', 'greatAmericanValuePack', 'twoIfBySea', 'mobileMenace');
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+PAGE 2 INVENTORY UPDATES
+
+UPDATE fireworks
+SET inventory = CASE 
+    WHEN id = 'victoryCelebration' THEN 24
+    WHEN id = 'barrageCandle' THEN 140
+    WHEN id = 'rotaryCannon' THEN 56
+    WHEN id = 'giveMeLiberty' THEN 12
+    WHEN id = 'patrioticMedley' THEN 24
+    WHEN id = 'letFreedomRing' THEN 72
+    WHEN id = 'mobMadness' THEN 20
+    WHEN id = 'highFalutin' THEN 20
+    WHEN id = 'sonsOfLiberty' THEN 216
+    WHEN id = 'special' THEN 312
+    WHEN id = 'festivalBall' THEN 135
+    WHEN id = 'goldRush' THEN 79
+    WHEN id = 'industrialRevolution' THEN 80
+    WHEN id = 'superDuty' THEN 5
+    WHEN id = 'greatAmerican8ShotAssortment' THEN 36
+    ELSE inventory
+END
+WHERE id IN ('victoryCelebration', 'barrageCandle', 'rotaryCannon', 'giveMeLiberty', 'patrioticMedley', 'letFreedomRing', 'mobMadness', 'highFalutin', 'sonsOfLiberty', 'special', 'festivalBall', 'goldRush', 'industrialRevolution', 'superDuty', 'greatAmerican8ShotAssortment');
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+PAGE 3 INVENTORY UPDATES
+
+UPDATE fireworks
+SET inventory = CASE 
+    WHEN id = 'silverToRedStars' THEN 62
+    WHEN id = 'crackleCandles' THEN 92
+    WHEN id = 'firecrackers1000Roll' THEN 28
+    WHEN id = 'firecrackerHalfBrick' THEN 129
+    WHEN id = 'cracklingBall' THEN 25
+    WHEN id = 'sparklers' THEN 70
+    WHEN id = 'spaceCapsules' THEN 36
+    WHEN id = 'blueThunder' THEN 24
+    WHEN id = 'classicRomanCandles' THEN 50
+    WHEN id = 'fullBore' THEN 31
+    WHEN id = 'romanCandleAssortment' THEN 58
+    WHEN id = 'miniRomanCandles' THEN 153
+    WHEN id = 'killerValue' THEN 4
+    WHEN id = 'parachuteBottleRockets' THEN 85
+    ELSE inventory
+END
+WHERE id IN ('silverToRedStars', 'crackleCandles', 'firecrackers1000Roll', 'firecrackerHalfBrick', 'cracklingBall', 'sparklers', 'spaceCapsules', 'blueThunder', 'classicRomanCandles', 'fullBore', 'romanCandleAssortment', 'miniRomanCandles', 'killerValue', 'parachuteBottleRockets');
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PAGE 4 INVENTORY UPDATES
+
+UPDATE fireworks
+SET inventory = CASE 
+    WHEN id = 'blastCracker' THEN 50
+    WHEN id = 'whistlingMoonTravler' THEN 10
+    WHEN id = 'partyPoppers' THEN 8
+    WHEN id = 'titanRockets' THEN 36
+    WHEN id = 'tankWithReport' THEN 36
+    WHEN id = 'snappers' THEN 300
+    ELSE inventory
+END
+WHERE id IN ('blastCracker', 'whistlingMoonTravler', 'partyPoppers', 'titanRockets', 'tankWithReport', 'snappers');
