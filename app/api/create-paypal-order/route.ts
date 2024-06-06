@@ -18,7 +18,9 @@ export async function POST(req: NextRequest) {
         });
 
         const response = await client().execute(request);
-        return NextResponse.json({ status: 'success', id: response.result.id });
+        const approvalUrl = response.result.links.find((link: { rel: string; }) => link.rel === 'approve').href;
+
+        return NextResponse.json({ status: 'success', id: response.result.id, approvalUrl });
     } catch (error: any) {
         console.error('Error creating PayPal order:', error);
         return NextResponse.json({ status: 'error', error: error.message });

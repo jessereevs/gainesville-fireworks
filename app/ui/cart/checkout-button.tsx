@@ -1,47 +1,48 @@
-import { loadStripe } from "@stripe/stripe-js";
 import React, { useState } from "react";
+import { useRouter } from "next/router";
 import { useCart } from "../CartContext";
 
 interface CheckoutButtonProps {
-  isEnabled: boolean
+  isEnabled: boolean;
 }
 
-const stripePromise = loadStripe(
-  process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!
-);
-
-const CheckoutButton: React.FC<CheckoutButtonProps> = ({isEnabled}) => {
+const CheckoutButton: React.FC<CheckoutButtonProps> = ({ isEnabled }) => {
   const { cart } = useCart();
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
   const handleCheckout = async () => {
     setLoading(true);
-    const stripe = await stripePromise;
     
     try {
-      const response = await fetch('/api/checkout-sessions', {
+      const response = await fetch('/api/create-paypal-order', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ cart }),
+        body: JSON.stringify({ 
+          purchase_units: cart.map(item => ({
+            description: item.name,
+            amount: {
+              currency_code: 'USD', // You can adjust the currency code as needed
+              value: (item.price * item.quantity).toFixed(2)
+            },
+            quantity: item.quantity,
+          }))
+        }),
       });
 
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
 
-      const session = await response.json();
+      const data = await response.json();
 
-      const result = await stripe?.redirectToCheckout({
-        sessionId: session.id,
-      });
-
-      if (result?.error) {
-        console.error(result.error.message);
+      if (data.approvalUrl) {
+        router.push(data.approvalUrl); // Redirect to PayPal for approval
       }
     } catch (error) {
-      console.error('Error creating checkout session:', error);
+      console.error('Error creating PayPal order:', error);
     } finally {
       setLoading(false);
     }
