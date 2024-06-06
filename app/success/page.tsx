@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import axios from "axios";
 import { useCart } from "../ui/CartContext";
 
@@ -14,6 +15,36 @@ const SuccessPage = () => {
   const [userInfo, setUserInfo] = useState({});
   const orderPlacedRef = useRef(false); // Ref to track if the API call was made
   const [isUserInfoLoaded, setIsUserInfoLoaded] = useState(false); // State to track user info loading
+  const searchParams = useSearchParams()
+  const token = searchParams.get('token'); // Get the order ID from the query parameters
+
+  // Capture the PayPal order when the component mounts
+  useEffect(() => {
+    const captureOrder = async () => {
+      if (!token) return;
+
+      try {
+        const response = await axios.post("/api/capture-paypal-order", {
+          orderId: token
+        });
+
+        const data = response.data;
+        if (data.status === "success") {
+          console.log("Payment captured successfully");
+          // Clear the cart and user info on successful payment capture
+          localStorage.removeItem("cart");
+          localStorage.removeItem("userInfo");
+          clearCart();
+        } else {
+          console.error("Error capturing payment:", data.error);
+        }
+      } catch (error) {
+        console.error("Error capturing PayPal order:", error);
+      }
+    };
+
+    captureOrder();
+  }, [token, clearCart]);
 
   useEffect(() => {
     console.log("useEffect called");
@@ -38,10 +69,6 @@ const SuccessPage = () => {
         console.log("Calling /api/place-order");
         const response = await axios.post("/api/place-order", { userInfo, cart });
         console.log("Order placed successfully:", response.data);
-        // Clear the cart from local storage and context after successful order placement
-        localStorage.removeItem("cart");
-        localStorage.removeItem("userInfo");
-        clearCart();
         orderPlacedRef.current = true; // Mark API call as made
       } catch (error) {
         console.error("Error placing order:", error);
