@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import React, { Suspense, useEffect, useState, useRef } from "react";
+import { useSearchParams } from "next/navigation";
 import axios from "axios";
 import { useCart } from "../ui/CartContext";
 
@@ -10,13 +10,13 @@ import SuccessText from "../ui/success/success-text";
 import FeaturedProducts from "../ui/home/featured-packages";
 import Footer from "../ui/footer";
 
-const SuccessPage = () => {
+const SuccessContent = () => {
   const { cart, clearCart } = useCart();
   const [userInfo, setUserInfo] = useState({});
   const orderPlacedRef = useRef(false); // Ref to track if the API call was made
   const [isUserInfoLoaded, setIsUserInfoLoaded] = useState(false); // State to track user info loading
-  const searchParams = useSearchParams()
-  const token = searchParams.get('token'); // Get the order ID from the query parameters
+  const searchParams = useSearchParams();
+  const token = searchParams.get("token"); // Get the order ID from the query parameters
 
   // Capture the PayPal order when the component mounts
   useEffect(() => {
@@ -80,7 +80,7 @@ const SuccessPage = () => {
     }
   }, [cart, clearCart, isUserInfoLoaded, userInfo]); // Dependency array ensures this effect runs only when userInfo is loaded
 
-  console.log("Render SuccessPage", { cart, userInfo, orderPlacedRef: orderPlacedRef.current });
+  console.log("Render SuccessContent", { cart, userInfo, orderPlacedRef: orderPlacedRef.current });
 
   return (
     <div>
@@ -89,6 +89,14 @@ const SuccessPage = () => {
       <FeaturedProducts />
       <Footer />
     </div>
+  );
+};
+
+const SuccessPage = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SuccessContent />
+    </Suspense>
   );
 };
 
