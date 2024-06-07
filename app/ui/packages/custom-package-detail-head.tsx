@@ -16,7 +16,7 @@ const timeline = [
   {
     name: "Wait for Approval",
     description:
-      "After submission, a Gainesville Fireworks represenative will review your order and return to you with a total value pack price. This may take several days.",
+      "After submission, a Gainesville Fireworks represenative will review your order and return to you with a total value pack price. This may take up to 48 hours.",
     date: "Step 3",
     dateTime: "2024-03",
   },
