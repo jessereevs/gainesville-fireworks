@@ -52,6 +52,7 @@ export default function FireworksForm() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [isUserInfoValid, setIsUserInfoValid] = useState(false);
   const [userInfo, setUserInfo] = useState({});
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const sendEmail = async () => {
     const selectedFireworks = fireworks.filter(
@@ -102,6 +103,9 @@ export default function FireworksForm() {
 
     const result = await response.json();
     console.log(result);
+    
+    // Set the isSubmitted state to true to display the success message
+    setIsSubmitted(true);
   };
 
   useEffect(() => {
@@ -334,7 +338,7 @@ export default function FireworksForm() {
             />
           </div>
         </div>
-        <div className="flex justify-center">
+        <div className="flex flex-col justify-center items-center">
           <button
             onClick={sendEmail}
             disabled={!isUserInfoValid}
@@ -342,6 +346,11 @@ export default function FireworksForm() {
           >
             Submit Package for Review
           </button>
+          {isSubmitted && (
+            <p className="mt-4 text-green-600 text-lg font-semibold">
+              Your custom package has been submitted!
+            </p>
+          )}
         </div>
       </div>
     </div>
