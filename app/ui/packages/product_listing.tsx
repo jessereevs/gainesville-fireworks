@@ -16,7 +16,9 @@ export default function Listing() {
         }
         const data = await response.json();
         // Sort packages by price from least to greatest
-        const sortedPackages = data.packages.sort((a: any, b: any) => a.price - b.price);
+        const sortedPackages = data.packages.sort(
+          (a: any, b: any) => a.price - b.price
+        );
         setPackages(sortedPackages);
       } catch (error: any) {
         setError(error.message);
@@ -63,10 +65,8 @@ export default function Listing() {
               </a>
             ))}
           </div>
-          {/*
           <div className="w-full border-zinc-400 border my-4"></div>
           <CustomPackageListing />
-          */}
         </div>
       </div>
     </div>

@@ -87,7 +87,7 @@ export default function PromoPage() {
           </h2>
           <div className="mt-6 mb-2 border-2 border-red-950 rounded-md bg-red-600 p-6">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-4xl">
-             NOW ACCEPTING ORDERS FOR JULY 4TH! 
+             ACCEPTING ORDERS FOR JULY 4TH SOON! 
             </h2>
           </div>
           <div className="mt-4 sm:mt-6">
