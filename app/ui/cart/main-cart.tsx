@@ -56,12 +56,19 @@ export default function ShoppingCart() {
 
   useEffect(() => {
     const checkInventory = () => {
-      const insufficientItems = clientCart.filter((item) => {
-        const inventory = inventoryData[item.id] || 0;
-        return item.quantity > inventory;
-      }).map((item) => item.name);
+      const insufficientItems = clientCart
+        .filter((item) => {
+          if (item.id === '100-package' || item.id === '300-package' || item.id === '500-package' || item.id === '1000-package') {
+            return false; // Skip the inventory check for '100-package'
+          }
+          const inventory = inventoryData[item.id] || 0;
+          return item.quantity > inventory;
+        })
+        .map((item) => item.name);
+    
       setInsufficientInventoryItems(insufficientItems);
     };
+    
 
     if (Object.keys(inventoryData).length > 0) {
       checkInventory();
