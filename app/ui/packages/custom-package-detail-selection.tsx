@@ -2,6 +2,7 @@ import { useState, useEffect, Fragment } from "react";
 import Image from "next/image";
 import { Dialog, Transition } from "@headlessui/react";
 import { FunnelIcon, XMarkIcon } from "@heroicons/react/20/solid";
+import UserInfoForm from "../cart/user-info-form";
 
 interface Firework {
   id: number;
@@ -44,10 +45,70 @@ export default function FireworksForm() {
   const [fireworks, setFireworks] = useState<Firework[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [selectedFireworks, setSelectedFireworks] = useState<{ [key: number]: boolean }>({});
-  const [quantities, setQuantities] = useState<{ [key: number]: number | null }>({});
+  const [quantities, setQuantities] = useState<{
+    [key: number]: number | null;
+  }>({});
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+  const [isUserInfoValid, setIsUserInfoValid] = useState(false);
+  const [userInfo, setUserInfo] = useState({});
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const sendEmail = async () => {
+    const selectedFireworks = fireworks.filter(
+      (firework) =>
+        quantities[firework.id] !== null &&
+        quantities[firework.id] !== undefined &&
+        quantities[firework.id]! > 0
+    );
+
+    const emailBody = selectedFireworks
+      .map(
+        (firework) => `
+          <div>
+            <p><strong>${firework.name}</strong></p>
+            <p>Quantity: ${quantities[firework.id]}</p>
+          </div>
+        `
+      )
+      .join("");
+
+    const userInfoBody = Object.entries(userInfo)
+      .map(([key, value]) => `<p><strong>${key}:</strong> ${value}</p>`)
+      .join("");
+
+    const response = await fetch("/api/send-email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        to: (userInfo as { email: string }).email,
+        bcc: "gainesvillefireworks@gmail.com",
+        subject: "Firework Custom Pack Submission",
+        text: `Here are the details of your custom firework package submission:\n${emailBody}\n\nUser Information:\n${userInfoBody}`,
+        html: `
+            <div>
+            <h1>Gainesville Fireworks Custom Package Submission</h1>
+              <div>
+                <h2>Custom Firework Package Submission</h2>
+                ${emailBody}
+              </div>
+              <div>
+                <h2>User Information</h2>
+                ${userInfoBody}
+              </div>
+            </div>
+          `,
+      }),
+    });
+
+    const result = await response.json();
+    console.log(result);
+    
+    // Set the isSubmitted state to true to display the success message
+    setIsSubmitted(true);
+  };
 
   useEffect(() => {
     const fetchFireworks = async () => {
@@ -68,22 +129,16 @@ export default function FireworksForm() {
     fetchFireworks();
   }, []);
 
-  const handleCheckboxChange = (id: number) => {
-    setSelectedFireworks((prev) => {
-      const newSelectedFireworks = { ...prev, [id]: !prev[id] };
-      if (!newSelectedFireworks[id]) {
-        setQuantities((prev) => ({ ...prev, [id]: null }));
-      }
-      return newSelectedFireworks;
-    });
-  };
-
   const handleQuantityChange = (id: number, value: number | null) => {
     setQuantities((prev) => ({ ...prev, [id]: value }));
   };
 
   const handleCategoryClick = (category: string) => {
     setSelectedCategory(category);
+  };
+
+  const handleFormChange = (updatedUserInfo: any) => {
+    setUserInfo(updatedUserInfo);
   };
 
   const sortFireworksByCategory = (fireworks: Firework[]) => {
@@ -244,15 +299,6 @@ export default function FireworksForm() {
                     <div className="flex items-center mt-4">
                       <div className="flex items-center">
                         <input
-                          type="checkbox"
-                          id={`checkbox-${firework.id}`}
-                          checked={selectedFireworks[firework.id] || false}
-                          onChange={() => handleCheckboxChange(firework.id)}
-                          className="mr-2"
-                        />
-                      </div>
-                      <div className="flex items-center">
-                        <input
                           type="number"
                           id={`quantity-${firework.id}`}
                           min="0"
@@ -265,7 +311,6 @@ export default function FireworksForm() {
                               e.target.value ? parseInt(e.target.value) : null
                             )
                           }
-                          disabled={!selectedFireworks[firework.id]}
                         />
                       </div>
                     </div>
@@ -284,6 +329,31 @@ export default function FireworksForm() {
             </div>
           </div>
         </section>
+      </div>
+      <div className="flex flex-col justify-center items-center gap-4 mb-20 border-t-2 border-zinc-900/50 mx-40">
+        <h1 className="text-5xl font-bold mt-10">Custom Package Submission</h1>
+        <div className="flex justify-center">
+          <div className="max-w-md">
+            <UserInfoForm
+              onFormChange={handleFormChange}
+              setValidationResult={setIsUserInfoValid}
+            />
+          </div>
+        </div>
+        <div className="flex flex-col justify-center items-center">
+          <button
+            onClick={sendEmail}
+            disabled={!isUserInfoValid}
+            className="h-20 border-2 hover:bg-red-700 border-red-800 bg-red-600 rounded-md text-white text-3xl p-2 font-bold disabled:bg-zinc-600 disabled:border-zinc-700"
+          >
+            Submit Package for Review
+          </button>
+          {isSubmitted && (
+            <p className="mt-4 text-green-600 text-lg font-semibold">
+              Your custom package has been submitted!
+            </p>
+          )}
+        </div>
       </div>
     </div>
   );

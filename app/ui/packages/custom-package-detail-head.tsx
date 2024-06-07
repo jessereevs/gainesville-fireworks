@@ -2,14 +2,14 @@ const timeline = [
   {
     name: "Create Package",
     description:
-      "To begin creating your own custom package, select the fireworks you wish to include! Do this by selecting your fireworks and quantities using the checkboxes below.",
+      "To begin creating your own custom package, select the fireworks you wish to include! Do this by selecting your fireworks and quantities using the quantity boxes below.",
     date: "Step 1",
     dateTime: "2024-01",
   },
   {
     name: "Submit Package",
     description:
-      "Once you have finished creating your fireworks packages, submit the package using the button at the bottom of this page.",
+      "Once you have finished creating your fireworks packages, enter your contact information and submit the package using the SUBMIT button below.",
     date: "Step 2",
     dateTime: "2024-02",
   },
