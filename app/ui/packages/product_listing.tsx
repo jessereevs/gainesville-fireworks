@@ -15,7 +15,9 @@ export default function Listing() {
           throw new Error("Network response was not ok");
         }
         const data = await response.json();
-        setPackages(data.packages);
+        // Sort packages by price from least to greatest
+        const sortedPackages = data.packages.sort((a: any, b: any) => a.price - b.price);
+        setPackages(sortedPackages);
       } catch (error: any) {
         setError(error.message);
       } finally {
