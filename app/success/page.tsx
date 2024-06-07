@@ -18,6 +18,49 @@ const SuccessContent = () => {
   const searchParams = useSearchParams();
   const token = searchParams.get("token"); // Get the order ID from the query parameters
 
+  // Function to send an email with user information and order contents
+  const sendEmail = async (userInfo: any, cart: any) => {
+    const cartDetails = cart
+      .map(
+        (item: any) => `
+          <div>
+            <p><strong>${item.name}</strong></p>
+            <p>Quantity: ${item.quantity}</p>
+            <p>Price: $${item.price}</p>
+          </div>
+        `
+      )
+      .join("");
+  
+    const orderTotal = cart.reduce((total: number, item: any) => total + item.price * item.quantity, 0);
+  
+    const userInfoBody = Object.entries(userInfo)
+      .map(([key, value]) => `<p><strong>${key}:</strong> ${value}</p>`)
+      .join("");
+  
+    await axios.post("/api/send-email", {
+      to: userInfo.email, // Assuming the user info contains an email field
+      bcc: "gainesvillefireworks@gmail.com", // Add BCC field
+      subject: "Your Firework Order",
+      text: `Here are the details of your order:\n${cartDetails}\n\nOrder Total: $${orderTotal}\n\nUser Information:\n${userInfoBody}`,
+      html: `
+        <div>
+          <h1>Gainesville Fireworks Receipt</h1>
+          <div>
+            <h2>Order Details</h2>
+            ${cartDetails}
+            <p><strong>Order Total:</strong> $${orderTotal}</p>
+          </div>
+          <div>
+            <h2>User Information</h2>
+            ${userInfoBody}
+          </div>
+        </div>
+      `,
+    });
+  };
+  
+
   // Capture the PayPal order when the component mounts
   useEffect(() => {
     const captureOrder = async () => {
@@ -69,6 +112,10 @@ const SuccessContent = () => {
         console.log("Calling /api/place-order");
         const response = await axios.post("/api/place-order", { userInfo, cart });
         console.log("Order placed successfully:", response.data);
+        
+        // Send email after successfully placing the order
+        await sendEmail(userInfo, cart);
+
         orderPlacedRef.current = true; // Mark API call as made
       } catch (error) {
         console.error("Error placing order:", error);

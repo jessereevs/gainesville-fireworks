@@ -83,13 +83,15 @@ export default function FireworksForm() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        to: "jessereeves.17@outlook.com",
-        subject: "Firework Order",
-        text: `Here are the details of your firework order:\n${emailBody}\n\nUser Information:\n${userInfoBody}`,
+        to: (userInfo as { email: string }).email,
+        bcc: "gainesvillefireworks@gmail.com",
+        subject: "Firework Custom Pack Submission",
+        text: `Here are the details of your custom firework package submission:\n${emailBody}\n\nUser Information:\n${userInfoBody}`,
         html: `
             <div>
+            <h1>Gainesville Fireworks Custom Package Submission</h1>
               <div>
-                <h2>Firework Order</h2>
+                <h2>Custom Firework Package Submission</h2>
                 ${emailBody}
               </div>
               <div>
