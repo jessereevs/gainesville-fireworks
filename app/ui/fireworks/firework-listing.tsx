@@ -178,7 +178,7 @@ export default function FireworkListing() {
                 onClick={() => setMobileFiltersOpen(true)}
               >
                 <span className="sr-only">Filters</span>
-                <FunnelIcon className="h-5 w-5" aria-hidden="true" />
+                <FunnelIcon className="h-5 w-5 text-red-600" aria-hidden="true" />
               </button>
             </div>
           </div>
