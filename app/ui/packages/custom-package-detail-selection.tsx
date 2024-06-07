@@ -256,7 +256,7 @@ export default function FireworksForm() {
                           type="number"
                           id={`quantity-${firework.id}`}
                           min="0"
-                          placeholder="Amount"
+                          placeholder="Quantity"
                           className="border rounded p-1 w-full"
                           value={quantities[firework.id] || ""}
                           onChange={(e) =>
