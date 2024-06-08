@@ -21,7 +21,7 @@ export default function PackageDetail({ fireworkPackage }: PackageDetailProps) {
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div className="pt-4">{isVisable && <Alert />}</div>
-      <div className="mx-auto max-w-5xl py-16 flex">
+      <div className="mx-auto max-w-5xl py-16 flex flex-col-reverse sm:flex-row">
         <div className="mr-10">
           <h1 className="font-bold text-3xl pb-2">{fireworkPackage.name}</h1>
           <h2>
@@ -129,7 +129,7 @@ export default function PackageDetail({ fireworkPackage }: PackageDetailProps) {
             <AddToCartButton item={fireworkPackage} />
           </a>
         </div>
-        <div className="flex w-fit h-fit">
+        <div className="flex w-fit h-fit mb-6 sm:mb-0">
           <Image
             src={fireworkPackage.imagehref}
             alt="Image of the firework package."

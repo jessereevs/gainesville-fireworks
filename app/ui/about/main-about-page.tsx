@@ -6,14 +6,14 @@ import {
 
 export default function AboutSection() {
   return (
-    <div className="relative isolate overflow-hidden bg-white py-24 sm:py-32">
+    <div className="relative isolate overflow-hidden bg-white sm:py-32">
       <div
         className="absolute -top-80 left-[max(6rem,33%)] -z-10 transform-gpu blur-3xl sm:left-1/2 md:top-20 lg:ml-20 xl:top-3 xl:ml-56"
         aria-hidden="true"
       ></div>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row-reverse lg:justify-end md:gap-24">
-          <div className="mt-6 mx-auto max-w-2xl lg:mx-0 text-center">
+          <div className="my-6 max-w-2xl lg:mx-0 text-center">
             <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
               Contact Us
             </h1>

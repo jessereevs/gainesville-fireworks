@@ -75,7 +75,7 @@ export default function FireworkDetail({
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div className="pt-4">{isVisable && <Alert />}</div>
-      <div className="mx-auto max-w-5xl py-16 flex">
+      <div className="mx-auto max-w-5xl py-16 flex flex-col-reverse sm:flex-row">
         <div className="mr-10">
           <h1 className="font-bold text-3xl pb-2">{firework.name}</h1>
           <h2>
@@ -97,7 +97,7 @@ export default function FireworkDetail({
             
           </div>
         </div>
-        <div className="flex w-fit h-fit">
+        <div className="flex w-full sm:w-fit mb-6 h-fit justify-center">
           <Image
             src={firework.imagehref}
             alt={firework.name}

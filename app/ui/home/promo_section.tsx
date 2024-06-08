@@ -12,10 +12,10 @@ const sansita_swashed = Sansita_Swashed({
 
 const collections = [
   {
-    name: "All Fireworks",
-    href: "/fireworks",
+    name: "Precreated Value Packs",
+    href: "/packages",
     imageSrc: Generic_Fireworks_1,
-    imageAlt: "Fireworks",
+    imageAlt: "All Fireworks",
   },
   {
     name: "Custom Discounted Firework Pack",
@@ -24,10 +24,10 @@ const collections = [
     imageAlt: "Firework Packages",
   },
   {
-    name: "Precreated Value Packs",
-    href: "/packages",
+    name: "All Fireworks",
+    href: "/fireworks",
     imageSrc: Generic_Fireworks_2,
-    imageAlt: "All Fireworks",
+    imageAlt: "Fireworks",
   },
 ];
 
@@ -85,11 +85,6 @@ export default function PromoPage() {
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-4xl">
             Buy Your Fireworks Locally!
           </h2>
-          <div className="mt-6 mb-2 border-2 border-red-950 rounded-md bg-red-600 p-6">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-4xl">
-             ACCEPTING ORDERS FOR JULY 4TH SOON! 
-            </h2>
-          </div>
           <div className="mt-4 sm:mt-6">
             <button
               onClick={handleButtonClick}

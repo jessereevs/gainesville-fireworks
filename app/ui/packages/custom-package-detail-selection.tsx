@@ -238,7 +238,7 @@ export default function FireworksForm() {
           </button>
           {
             !isUserInfoValid && (
-              <p className="text-red-600 mt-2">Please check that all fields are populated.</p>
+              <p className="text-red-600 mt-2 text-center">Please check that all fields are populated and agree to the Terms of Sale to submit.</p>
             )
           }
           {isSubmitted && (
