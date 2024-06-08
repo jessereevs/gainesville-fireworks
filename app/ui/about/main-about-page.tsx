@@ -13,7 +13,7 @@ export default function AboutSection() {
       ></div>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row-reverse lg:justify-end md:gap-24">
-          <div className="my-6 max-w-2xl lg:mx-0 text-center">
+          <div className="mb-6 max-w-2xl lg:mx-0 text-center">
             <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
               Contact Us
             </h1>
