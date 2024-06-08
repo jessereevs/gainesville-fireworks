@@ -1,4 +1,5 @@
-import { useState, useEffect, Fragment } from "react";
+
+import { useState, useEffect, useRef, Fragment } from "react";
 import Image from "next/image";
 import { Tab } from "@headlessui/react";
 import UserInfoForm from "../cart/user-info-form";
@@ -35,6 +36,8 @@ export default function FireworksForm() {
   const [isUserInfoValid, setIsUserInfoValid] = useState(false);
   const [userInfo, setUserInfo] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const userInfoFormRef = useRef<HTMLDivElement>(null);
 
   const sendEmail = async () => {
     const selectedFireworks = fireworks.filter(
@@ -129,14 +132,26 @@ export default function FireworksForm() {
     return fireworks.sort((a, b) => categoryOrder[a.category] - categoryOrder[b.category]);
   };
 
+  const scrollToUserInfoForm = () => {
+    if (userInfoFormRef.current) {
+      userInfoFormRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   if (loading) return <p className="text-center mb-4 text-red-600 text-xl font-semibold">Loading Fireworks...</p>;
   if (error) return <p>Error: {error}</p>;
 
   return (
     <div className="min-h-screen">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex items-baseline justify-between pb-6 pt-24">
+        <div className="flex flex-col sm:flex-row items-baseline justify-between pb-6 pt-24">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900">Fireworks</h1>
+          <button
+            onClick={scrollToUserInfoForm}
+            className="h-auto border-2 hover:bg-red-700 border-red-800 bg-red-600 rounded-md text-white text-lg p-2 font-bold mt-4 sm:mt-0"
+          >
+            Go to Submission Form
+          </button>
         </div>
 
         <Tab.Group defaultIndex={1}>
@@ -206,7 +221,7 @@ export default function FireworksForm() {
           </Tab.Panels>
         </Tab.Group>
       </div>
-      <div className="flex flex-col justify-center items-center gap-4 mb-20 border-t-2 border-zinc-900/50 mx-4 lg:mx-40">
+      <div ref={userInfoFormRef} className="flex flex-col justify-center items-center gap-4 mb-20 border-t-2 border-zinc-900/50 mx-4 lg:mx-40">
         <h1 className="text-5xl font-bold mt-10 text-center">Custom Package Submission</h1>
         <div className="flex justify-center">
           <div className="w-full max-w-md">
