@@ -29,8 +29,8 @@ export async function POST(req: NextRequest) {
             intent: 'CAPTURE' as 'CAPTURE',
             purchase_units: purchase_units,
             application_context: {
-                return_url: 'http://localhost:3001/success', // Ensure this URL matches your success page route
-                cancel_url: 'http://localhost:3001/cancel'  // Optional: URL to redirect if the user cancels the payment
+                return_url: 'http://gainesville-fireworks.com/success', // Ensure this URL matches your success page route
+                cancel_url: 'http://gainesville-fireworks.com/cancel'  // Optional: URL to redirect if the user cancels the payment
             }
         };
 
