@@ -221,7 +221,7 @@ export default function FireworksForm() {
           </Tab.Panels>
         </Tab.Group>
       </div>
-      <div ref={userInfoFormRef} className="flex flex-col justify-center items-center gap-4 mb-20 border-t-2 border-zinc-900/50 mx-4 lg:mx-40">
+      <div ref={userInfoFormRef} className="flex flex-col justify-center items-center gap-4 mb-20 border-t-2 border-zinc-900/50 mx-4 lg:mx-40 mt-10">
         <h1 className="text-5xl font-bold mt-10 text-center">Custom Package Submission</h1>
         <div className="flex justify-center">
           <div className="w-full max-w-md">
