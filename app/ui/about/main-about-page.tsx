@@ -19,11 +19,11 @@ export default function AboutSection() {
             </h1>
             <div className="flex gap-3 mt-3 pl-1 justify-center">
               <h3 className="font-bold text-lg">Phone</h3>
-              <p className="text-xl">(352) 231-0067</p>
+              <p className="text-xl"><a href="tel:+13522310067">(352) 231-0067</a></p>
             </div>
             <div className="flex gap-3 mt-3 pl-1 justify-center">
               <h3 className="font-bold text-lg">Email</h3>
-              <p className="text-xl">gainesvillefireworks@gmail.com</p>
+              <p className="text-xl text-red-600"><a href="mailto:gainesvillefireworks@gmail.com">gainesvillefireworks@gmail.com</a></p>
             </div>
           </div>
           <div className="mx-auto max-w-2xl lg:mx-0">
