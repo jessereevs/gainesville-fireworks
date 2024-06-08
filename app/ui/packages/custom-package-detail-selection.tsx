@@ -243,7 +243,7 @@ export default function FireworksForm() {
           }
           {isSubmitted && (
             <p className="mt-4 text-green-600 text-lg font-semibold">
-              Your custom package has been submitted!
+              Your custom package has been submitted!<br /> You will recieve an email shortly. Please check your spam if you do not see your email.
             </p>
           )}
         </div>
