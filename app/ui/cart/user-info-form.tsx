@@ -38,7 +38,6 @@ const UserInfoForm: React.FC<UserInfoFormProps> = ({
   const [emailValid, setEmailValid] = useState(false);
   const [phoneValid, setPhoneValid] = useState(false);
   const [street1Valid, setStreet1Valid] = useState(false);
-  const [street2Valid, setStreet2Valid] = useState(false);
   const [cityValid, setCityValid] = useState(false);
   const [stateValid, setStateValid] = useState(false);
   const [zipValid, setZipValid] = useState(false);
@@ -130,13 +129,17 @@ const UserInfoForm: React.FC<UserInfoFormProps> = ({
     nameValid,
     emailValid,
     street1Valid,
-    street2Valid,
     cityValid,
     stateValid,
     zipValid,
     tosValid,
     setValidationResult,
   ]);
+
+  const inputClassNames = (isValid: boolean) =>
+    `mt-1 block w-full rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm ${
+      isValid ? "border-gray-300" : "border-red-500"
+    }`;
 
   return (
     <div className="mt-2">
@@ -153,7 +156,7 @@ const UserInfoForm: React.FC<UserInfoFormProps> = ({
             id="name"
             ref={nameRef}
             onChange={handleNameChange}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+            className={inputClassNames(nameValid)}
           />
         </div>
         <div className="mb-4">
@@ -168,7 +171,7 @@ const UserInfoForm: React.FC<UserInfoFormProps> = ({
             id="email"
             ref={emailRef}
             onChange={handleEmailChange}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+            className={inputClassNames(emailValid)}
           />
         </div>
         <div className="mb-4">
@@ -183,7 +186,7 @@ const UserInfoForm: React.FC<UserInfoFormProps> = ({
             id="phone"
             ref={phoneRef}
             onChange={handlePhoneChange}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+            className={inputClassNames(phoneValid)}
           />
         </div>
         <div className="border border-zinc-200 mb-2"></div>
@@ -200,7 +203,7 @@ const UserInfoForm: React.FC<UserInfoFormProps> = ({
             id="street1"
             ref={street1Ref}
             onChange={handleStreet1Change}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+            className={inputClassNames(street1Valid)}
           />
         </div>
         <div className="mb-4">
@@ -214,7 +217,7 @@ const UserInfoForm: React.FC<UserInfoFormProps> = ({
             type="text"
             id="street2"
             ref={street2Ref}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+            className={inputClassNames(true)}
           />
         </div>
         <div className="mb-4">
@@ -229,7 +232,7 @@ const UserInfoForm: React.FC<UserInfoFormProps> = ({
             id="city"
             ref={cityRef}
             onChange={handleCityChange}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+            className={inputClassNames(cityValid)}
           />
         </div>
         <div className="mb-4">
@@ -244,7 +247,7 @@ const UserInfoForm: React.FC<UserInfoFormProps> = ({
             id="state"
             ref={stateRef}
             onChange={handleStateChange}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+            className={inputClassNames(stateValid)}
           />
           {!(
             city.toLowerCase() === "gainesville" &&
@@ -271,7 +274,7 @@ const UserInfoForm: React.FC<UserInfoFormProps> = ({
             id="zip"
             ref={zipRef}
             onChange={handleZipChange}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+            className={inputClassNames(zipValid)}
           />
         </div>
         <div className="border border-zinc-200 mb-2"></div>
