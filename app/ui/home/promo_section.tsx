@@ -12,20 +12,20 @@ const sansita_swashed = Sansita_Swashed({
 
 const collections = [
   {
-    name: "Individual Fireworks",
+    name: "All Fireworks",
     href: "/fireworks",
     imageSrc: Generic_Fireworks_1,
-    imageAlt: "Individual Fireworks",
+    imageAlt: "Fireworks",
   },
   {
-    name: "Firework Packages",
-    href: "/packages",
+    name: "Custom Discounted Firework Pack",
+    href: "/packages/custom",
     imageSrc: Fireworks_Packages,
     imageAlt: "Firework Packages",
   },
   {
-    name: "All Fireworks",
-    href: "/fireworks",
+    name: "Precreated Value Packs",
+    href: "/packages",
     imageSrc: Generic_Fireworks_2,
     imageAlt: "All Fireworks",
   },

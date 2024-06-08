@@ -1,29 +1,41 @@
 const timeline = [
   {
-    name: "Create Package",
-    description:
-      "To begin creating your own custom package, select the fireworks you wish to include! Do this by selecting your fireworks and quantities using the quantity boxes below.",
+    name: "Create Custom Value Pack",
+    description: (
+      <>
+        To begin creating your own custom package, select the fireworks you wish to include! Do this by selecting your fireworks and quantities using the quantity boxes below.
+      </>
+    ),
     date: "Step 1",
     dateTime: "2024-01",
   },
   {
-    name: "Submit Package",
-    description:
-      "Once you have finished creating your fireworks packages, enter your contact information and submit the package using the SUBMIT button below.",
+    name: "Submit Pack for Discounted Price",
+    description: (
+      <>
+        Once you have finished creating your custom fireworks packages, <span className="font-bold text-red-600">scroll to the bottom of the page</span> and enter your contact information and submit the package using the SUBMIT button below.
+      </>
+    ),
     date: "Step 2",
     dateTime: "2024-02",
   },
   {
-    name: "Wait for Approval",
-    description:
-      "After submission, a Gainesville Fireworks represenative will review your order and return to you with a total value pack price. This may take up to 48 hours.",
+    name: "Approve Your Package",
+    description: (
+      <>
+        After submission, a Gainesville Fireworks representative will review your order to provide you with your largest discount for your custom pack. You will receive your discounted price within 48 hours.
+      </>
+    ),
     date: "Step 3",
     dateTime: "2024-03",
   },
   {
     name: "Place Order",
-    description:
-      "If you wish to purchase your custom package at the approved price, follow the instructions provided in your follow-up email.",
+    description: (
+      <>
+        If you wish to purchase your custom pack at the discounted price, follow the instructions provided in your follow-up email.
+      </>
+    ),
     date: "Step 4",
     dateTime: "2024-04",
   },
@@ -33,7 +45,7 @@ export default function CustomPackDetailHead() {
   return (
     <div className="flex flex-col items-center mt-4 p-6">
       <h1 className="text-red-500 text-5xl font-bold text-center">
-        Custom Package Creator
+        Custom Discount Pack Creator
       </h1>
       <h3 className="mt-4 md:w-1/2 lg:w-1/3 text-center">
         The custom package creator allows you to design your own package and get
@@ -42,7 +54,7 @@ export default function CustomPackDetailHead() {
       <div className="mx-auto mt-12 max-w-7xl px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-8 overflow-hidden lg:mx-0 lg:max-w-none lg:grid-cols-4">
           {timeline.map((item) => (
-            <div key={item.name}>
+            <div key={item.name} className="relative">
               <time
                 dateTime={item.dateTime}
                 className="flex items-center text-sm font-semibold leading-6 text-red-600"
@@ -69,7 +81,9 @@ export default function CustomPackDetailHead() {
             </div>
           ))}
         </div>
-        <p className="text-center mt-10 font-semibold text-gray-700">If you have any questions regarding this process, please contact us and a Gainesville Fireworks represenative will be happy to assist!</p>
+        <p className="text-center mt-10 font-semibold text-gray-700">
+          If you have any questions regarding this process, please contact us and a Gainesville Fireworks representative will be happy to assist!
+        </p>
       </div>
     </div>
   );
