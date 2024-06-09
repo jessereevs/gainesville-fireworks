@@ -9,7 +9,7 @@ export async function POST(req: NextRequest) {
 
   const msg = {
     to, // Change to your recipient
-    from: 'jessereevs@gmail.com', // Change to your verified sender
+    from: 'gainesvillefireworks@gmail.com', // Change to your verified sender
     subject,
     text,
     html,
