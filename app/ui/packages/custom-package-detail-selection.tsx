@@ -12,6 +12,13 @@ interface Firework {
   price: number;
 }
 
+interface UserInfo {
+  name: string;
+  email: string;
+  phone: string;
+  // Add any other fields here
+}
+
 const subCategories = [
   "All",
   "Reloadable Shells",
@@ -33,7 +40,7 @@ export default function FireworksForm() {
   const [quantities, setQuantities] = useState<{ [key: number]: number | null }>({});
   const [updatedQuantities, setUpdatedQuantities] = useState<{ [key: number]: boolean }>({});
   const [isUserInfoValid, setIsUserInfoValid] = useState(false);
-  const [userInfo, setUserInfo] = useState({});
+  const [userInfo, setUserInfo] = useState<UserInfo>({ name: "", email: "", phone: "" });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const userInfoFormRef = useRef<HTMLDivElement>(null);
@@ -62,7 +69,12 @@ export default function FireworksForm() {
       .join("");
 
     const userInfoBody = Object.entries(userInfo)
-      .map(([key, value]) => `<p><strong>${key}:</strong> ${value}</p>`)
+      .map(([key, value]) => {
+        if (key === "phone") {
+          return `<p><strong>${key}:</strong> <a href="tel:${value}">${value}</a></p>`;
+        }
+        return `<p><strong>${key}:</strong> ${value}</p>`;
+      })
       .join("");
 
     const response = await fetch("/api/send-email", {
@@ -71,7 +83,7 @@ export default function FireworksForm() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        to: (userInfo as { email: string }).email,
+        to: userInfo.email,
         bcc: "gainesvillefireworks@gmail.com",
         subject: "Firework Custom Pack Submission",
         text: `Here are the details of your custom firework package submission:\n${emailBody}\n\nTotal Cost: $${totalCost}\n\nUser Information:\n${userInfoBody}`,
