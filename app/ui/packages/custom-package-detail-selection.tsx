@@ -232,7 +232,7 @@ export default function FireworksForm() {
           <button
             onClick={sendEmail}
             disabled={!isUserInfoValid}
-            className="h-auto border-2 hover:bg-red-700 border-red-800 bg-red-600 rounded-md text-white text-3xl p-2 font-bold"
+            className="h-auto border-2 hover:bg-red-700 border-red-800 bg-red-600 text-white rounded-md text-3xl p-2 font-bold disabled:bg-zinc-300 disabled:border-0"
           >
             Submit Package for Review
           </button>

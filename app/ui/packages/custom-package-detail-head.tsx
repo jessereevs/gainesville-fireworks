@@ -45,7 +45,10 @@ export default function CustomPackDetailHead() {
   return (
     <div className="flex flex-col items-center mt-4 p-6">
       <h1 className="text-red-500 text-5xl font-bold text-center">
-        Custom Discount Pack Creator
+       Create a Custom Value Pack 
+      </h1>
+      <h1 className="text-red-500 text-3xl mt-2 font-bold text-center">
+      Submit for your personal discount! 
       </h1>
       <h3 className="mt-4 md:w-1/2 lg:w-1/3 text-center">
         The custom package creator allows you to design your own package and get

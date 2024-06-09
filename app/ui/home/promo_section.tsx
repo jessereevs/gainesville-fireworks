@@ -12,7 +12,7 @@ const sansita_swashed = Sansita_Swashed({
 
 const collections = [
   {
-    name: "Precreated Value Packs",
+    name: "House Value Packs",
     href: "/packages",
     imageSrc: Generic_Fireworks_1,
     imageAlt: "All Fireworks",
