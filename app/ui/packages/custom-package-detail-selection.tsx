@@ -1,5 +1,4 @@
-
-import { useState, useEffect, useRef, Fragment } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { Tab } from "@headlessui/react";
 import UserInfoForm from "../cart/user-info-form";
@@ -47,15 +46,19 @@ export default function FireworksForm() {
         quantities[firework.id]! > 0
     );
 
+    let totalCost = 0;
     const emailBody = selectedFireworks
-      .map(
-        (firework) => `
+      .map((firework, index) => {
+        totalCost += firework.price * (quantities[firework.id] || 0);
+        return `
           <div>
-            <p><strong>${firework.name}</strong></p>
+            <p><strong>${index + 1}. ${firework.name}</strong></p>
             <p>Quantity: ${quantities[firework.id]}</p>
+            <p>Price: $${firework.price}</p>
+            <p>Total: $${firework.price * (quantities[firework.id] || 0)}</p>
           </div>
-        `
-      )
+        `;
+      })
       .join("");
 
     const userInfoBody = Object.entries(userInfo)
@@ -71,13 +74,14 @@ export default function FireworksForm() {
         to: (userInfo as { email: string }).email,
         bcc: "gainesvillefireworks@gmail.com",
         subject: "Firework Custom Pack Submission",
-        text: `Here are the details of your custom firework package submission:\n${emailBody}\n\nUser Information:\n${userInfoBody}`,
+        text: `Here are the details of your custom firework package submission:\n${emailBody}\n\nTotal Cost: $${totalCost}\n\nUser Information:\n${userInfoBody}`,
         html: `
             <div>
-            <h1>Gainesville Fireworks Custom Package Submission</h1>
+              <h1>Gainesville Fireworks Custom Package Submission</h1>
               <div>
                 <h2>Custom Firework Package Submission</h2>
                 ${emailBody}
+                <p><strong>Total Cost: $${totalCost}</strong></p>
               </div>
               <div>
                 <h2>User Information</h2>

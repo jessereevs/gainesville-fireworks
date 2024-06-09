@@ -138,7 +138,7 @@ const UserInfoForm: React.FC<UserInfoFormProps> = ({
 
   const inputClassNames = (isValid: boolean) =>
     `mt-1 block w-full rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm ${
-      isValid ? "border-gray-300" : "border-red-500"
+      isValid ? "border-gray-300 bg-blue-100" : "border-red-500"
     }`;
 
   return (
