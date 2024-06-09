@@ -148,7 +148,7 @@ export default function ShoppingCart() {
                             )
                           }
                         >
-                          {[...Array(10)].map((_, i) => (
+                          {[...Array(100)].map((_, i) => (
                             <option key={i} value={i + 1}>
                               {i + 1}
                             </option>
