@@ -85,6 +85,10 @@ export default function PromoPage() {
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-4xl">
             Buy Your Fireworks Locally!
           </h2>
+          <div className="bg-red-600 text-white p-4 border-2 border-red-800 font-bold m-6 rounded-xl">
+            <h2 className="text-4xl mb-2">Special Today</h2>
+            <h3>Recieve a <a href="/fireworks/magnumArtillery" className="italic font-extrabold">Magnum Artillery Mortar</a> FREE with Every Purchase Over $150</h3>
+          </div>
           <div className="mt-4 sm:mt-6">
             <button
               onClick={handleButtonClick}
