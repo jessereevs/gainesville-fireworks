@@ -39,7 +39,7 @@ const SuccessContent = () => {
       .join("");
   
     await axios.post("/api/send-email", {
-      to: userInfo.email, // Assuming the user info contains an email field
+      to: [ userInfo.email, 'gainesvillefireworks@gmail.com'], // Assuming the user info contains an email field
       bcc: "gainesvillefireworks@gmail.com", // Add BCC field
       subject: "Your Firework Order",
       text: `Here are the details of your order:\n${cartDetails}\n\nOrder Total: $${orderTotal}\n\nUser Information:\n${userInfoBody}`,
