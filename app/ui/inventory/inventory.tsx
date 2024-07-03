@@ -100,7 +100,14 @@ const InventoryPage = () => {
                     </thead>
                     <tbody>
                         {fireworks.map((product) => (
-                            <tr key={product.id} className="odd:bg-gray-100 even:bg-white">
+                            <tr
+                                key={product.id}
+                                className={`
+                                    ${product.inventory === 0 ? 'bg-red-700/50' :
+                                        product.inventory <= 10 ? 'bg-yellow-300/50' :
+                                            'odd:bg-gray-100 even:bg-white'}
+                                    `}
+                            >
                                 <td className="py-2 px-4 border-b border-gray-200" data-label="ID">{product.id}</td>
                                 <td className="py-2 px-4 border-b border-gray-200" data-label="Name">{product.name}</td>
                                 <td className="py-2 px-4 border-b border-gray-200" data-label="Description">{product.description}</td>
